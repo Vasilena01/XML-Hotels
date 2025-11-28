@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>XSLT Transformation Test</title>
+</head>
+<body>
+    <h1>Testing XSLT Transformation</h1>
+    <div id="result"></div>
+    <div id="error"></div>
+    
+    <script>
+        async function testTransformation() {
+            try {
+                const parser = new DOMParser();
+                const xsltProcessor = new XSLTProcessor();
+
+                // Load XSLT
+                const xslResponse = await fetch('hotels.xsl');
+                const xslText = await xslResponse.text();
+                const xslStylesheet = parser.parseFromString(xslText, "application/xml");
+                xsltProcessor.importStylesheet(xslStylesheet);
+
+                // Load XML
+                const xmlResponse = await fetch('hotels.xml');
+                const xmlText = await xmlResponse.text();
+                const xmlDoc = parser.parseFromString(xmlText, "application/xml");
+                
+                // Test fragment transformation (what index.html uses)
+                xsltProcessor.clearParameters();
+                xsltProcessor.setParameter(null, 'loadDocument', 'false');
+                xsltProcessor.setParameter(null, 'showAll', 'true');
+                
+                const resultDoc = xsltProcessor.transformToDocument(xmlDoc);
+                
+                if (resultDoc) {
+                    const serializer = new XMLSerializer();
+                    const resultHTML = serializer.serializeToString(resultDoc);
+                    document.getElementById('result').innerHTML = `
+                        <h2 style="color: green;">✓ Transformation Successful!</h2>
+                        <p>The XSLT transformation worked without errors.</p>
+                        <details>
+                            <summary>Raw Result (first 500 chars)</summary>
+                            <pre style="background: #f5f5f5; padding: 10px; overflow-x: auto;">
+${resultHTML.substring(0, 500)}...
+                            </pre>
+                        </details>
+                    `;
+                } else {
+                    throw new Error('Transform returned null/undefined result');
+                }
+                
+            } catch(e) {
+                document.getElementById('error').innerHTML = `
+                    <h2 style="color: red;">✗ Transformation Failed</h2>
+                    <p>Error: ${e.message}</p>
+                    <pre style="background: #ffeeee; padding: 10px;">${e.stack}</pre>
+                `;
+            }
+        }
+        
+        testTransformation();
+    </script>
+</body>
+</html>

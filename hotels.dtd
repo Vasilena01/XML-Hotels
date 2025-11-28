@@ -1,0 +1,101 @@
+<!ELEMENT catalogue (hotels,regions,chains)>
+
+<!ELEMENT hotels (hotel+)>
+<!ELEMENT hotel (name,category,address,description?,stars,rating,review_count?,price?,currency?,checkin_time?,checkout_time?,phone?,email?,website?,languages?,thumbnail,gallery?,amenities,rooms)>
+<!ATTLIST hotel id ID #REQUIRED>
+<!ATTLIST hotel region IDREF #REQUIRED>
+<!ATTLIST hotel chain IDREF #IMPLIED>
+<!ATTLIST hotel property_type (hotel|apartment|hostel|guesthouse|vacation-rental|bed-and-breakfast|motel|resort) "hotel">
+<!ATTLIST hotel is_available (true|false) "true">
+
+<!ELEMENT name (#PCDATA)>
+<!ELEMENT category (#PCDATA)>
+<!ELEMENT address (#PCDATA)>
+<!ELEMENT description (#PCDATA)>
+<!ELEMENT stars (#PCDATA)>
+<!ELEMENT rating (#PCDATA)>
+<!ELEMENT review_count (#PCDATA)>
+<!ELEMENT price (#PCDATA)>
+<!ATTLIST price currency CDATA "EUR">
+<!ATTLIST price per (night|week|month|stay) "night">
+<!ELEMENT currency (#PCDATA)>
+<!ELEMENT checkin_time (#PCDATA)>
+<!ELEMENT checkout_time (#PCDATA)>
+<!ELEMENT phone (#PCDATA)>
+<!ELEMENT email (#PCDATA)>
+<!ELEMENT website (#PCDATA)>
+
+<!ELEMENT languages (language+)>
+<!ELEMENT language (#PCDATA)>
+
+<!ELEMENT amenities EMPTY>
+<!ATTLIST amenities breakfast (true|false) "false">
+<!ATTLIST amenities dinner (true|false) "false">
+<!ATTLIST amenities wi-fi (true|false) "false">
+<!ATTLIST amenities parking (true|false) "false">
+<!ATTLIST amenities restaurant (true|false) "false">
+<!ATTLIST amenities bar (true|false) "false">
+<!ATTLIST amenities pool (true|false) "false">
+<!ATTLIST amenities indoor-pool (true|false) "false">
+<!ATTLIST amenities outdoor-pool (true|false) "false">
+<!ATTLIST amenities fitness (true|false) "false">
+<!ATTLIST amenities spa (true|false) "false">
+<!ATTLIST amenities massage (true|false) "false">
+<!ATTLIST amenities sauna (true|false) "false">
+<!ATTLIST amenities hot-tub (true|false) "false">
+<!ATTLIST amenities conference-rooms (true|false) "false">
+<!ATTLIST amenities pets (true|false) "false">
+<!ATTLIST amenities room-service (true|false) "false">
+<!ATTLIST amenities shuttle-service (true|false) "false">
+<!ATTLIST amenities airport-shuttle (true|false) "false">
+<!ATTLIST amenities car-rental (true|false) "false">
+<!ATTLIST amenities kids-club (true|false) "false">
+<!ATTLIST amenities playground (true|false) "false">
+<!ATTLIST amenities beach-access (true|false) "false">
+
+<!ELEMENT thumbnail EMPTY>
+<!ATTLIST thumbnail source ENTITY #REQUIRED>
+
+<!ELEMENT gallery (image+)>
+<!ELEMENT image EMPTY>
+<!ATTLIST image source ENTITY #REQUIRED>
+
+<!ELEMENT rooms (room+)>
+<!ELEMENT room (type,beds,capacity,size?,price_per_night?,facilities?)>
+<!ATTLIST room id ID #REQUIRED>
+<!ATTLIST room available_rooms CDATA "1">
+
+<!ELEMENT type (#PCDATA)>
+<!ELEMENT beds (#PCDATA)>
+<!ELEMENT capacity (#PCDATA)>
+<!ELEMENT size (#PCDATA)>
+<!ELEMENT price_per_night (#PCDATA)>
+<!ATTLIST price_per_night currency CDATA "EUR">
+<!ATTLIST price_per_night per (night|week|month|stay) "night">
+
+<!ELEMENT facilities EMPTY>
+<!ATTLIST facilities non-smoking (true|false) "true">
+<!ATTLIST facilities kitchen (true|false) "false">
+<!ATTLIST facilities air-conditioning (true|false) "false">
+<!ATTLIST facilities balcony (true|false) "false">
+<!ATTLIST facilities tv (true|false) "false">
+<!ATTLIST facilities bath (true|false) "false">
+<!ATTLIST facilities shower (true|false) "false">
+<!ATTLIST facilities shared-bathroom (true|false) "false">
+<!ATTLIST facilities coffee-maker (true|false) "false">
+<!ATTLIST facilities hairdryer (true|false) "false">
+<!ATTLIST facilities iron (true|false) "false">
+<!ATTLIST facilities desk (true|false) "false">
+<!ATTLIST facilities sitting-area (true|false) "false">
+<!ATTLIST facilities wardrobe (true|false) "false">
+
+<!ELEMENT regions (region+)>
+<!ELEMENT region (country, municipality, city)>
+<!ATTLIST region id ID #REQUIRED>
+<!ELEMENT country (#PCDATA)>
+<!ELEMENT municipality (#PCDATA)>
+<!ELEMENT city (#PCDATA)>
+
+<!ELEMENT chains (chain+)>
+<!ELEMENT chain (#PCDATA)>
+<!ATTLIST chain id ID #REQUIRED>
