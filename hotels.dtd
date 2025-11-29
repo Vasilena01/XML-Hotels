@@ -1,12 +1,10 @@
 <!ELEMENT catalogue (hotels,regions,chains)>
-
 <!ELEMENT hotels (hotel+)>
-<!ELEMENT hotel (name,category,address,description?,stars,rating,review_count?,price?,currency?,checkin_time?,checkout_time?,phone?,email?,website?,languages?,thumbnail,gallery?,amenities,rooms)>
+<!ELEMENT hotel (name,category,address,description?,stars,rating,review_count?,price?,currency?,checkin_time?,checkout_time?,phone?,email?,website?,thumbnail,gallery?,amenities,rooms)>
 <!ATTLIST hotel id ID #REQUIRED>
 <!ATTLIST hotel region IDREF #REQUIRED>
 <!ATTLIST hotel chain IDREF #IMPLIED>
 <!ATTLIST hotel property_type (hotel|apartment|hostel|guesthouse|vacation-rental|bed-and-breakfast|motel|resort) "hotel">
-<!ATTLIST hotel is_available (true|false) "true">
 
 <!ELEMENT name (#PCDATA)>
 <!ELEMENT category (#PCDATA)>
@@ -24,9 +22,6 @@
 <!ELEMENT phone (#PCDATA)>
 <!ELEMENT email (#PCDATA)>
 <!ELEMENT website (#PCDATA)>
-
-<!ELEMENT languages (language+)>
-<!ELEMENT language (#PCDATA)>
 
 <!ELEMENT amenities EMPTY>
 <!ATTLIST amenities breakfast (true|false) "false">

@@ -35,7 +35,6 @@
 			<phone>+359 2 811 0800</phone>
 			<email>reservations@grandhotelsofia.bg</email>
 			<website>https://www.grandhotelsofia.bg</website>
-			<languages>English, Bulgarian, German, Russian</languages>
 			<thumbnail source="hotel1_image0" />
 			<gallery>
 				<image source="hotel1_image1" />
@@ -76,7 +75,6 @@
 			<phone>+359 32 935 000</phone>
 			<email>info@hotelimperial.bg</email>
 			<website>https://www.hotelimperial.bg</website>
-			<languages>English, Bulgarian, German</languages>
 			<thumbnail source="hotel2_image0" />
 			<gallery>
 				<image source="hotel2_image1" />
@@ -117,7 +115,6 @@
 			<phone>+359 52 817 200</phone>
 			<email>reservations@seasidepalace.bg</email>
 			<website>https://www.seasidepalace.bg</website>
-			<languages>English, Bulgarian, German, Russian, French</languages>
 			<thumbnail source="hotel3_image0" />
 			<gallery>
 				<image source="hotel3_image1" />
@@ -158,7 +155,6 @@
 			<phone>+359 701 23456</phone>
 			<email>info@hotelrila.bg</email>
 			<website>https://www.hotelrila.bg</website>
-			<languages>English, Bulgarian</languages>
 			<thumbnail source="hotel4_image0" />
 			<gallery>
 				<image source="hotel4_image1" />
