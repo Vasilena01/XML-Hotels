@@ -47,9 +47,6 @@
 <!ELEMENT email (#PCDATA)>
 <!ELEMENT website (#PCDATA)>
 
-<!ELEMENT languages (language+)>
-<!ELEMENT language (#PCDATA)>
-
 <!ELEMENT amenities EMPTY>
 <!ATTLIST amenities breakfast (true|false) "false">
 <!ATTLIST amenities dinner (true|false) "false">
