@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
 
     <xs:element name="catalogue">
         <xs:complexType>
-            <xs:all>
-                <xs:element name="hotels" />
-                <xs:element name="regions" />
-                <xs:element name="chains" />
-            </xs:all>
+            <xs:sequence>
+                <xs:element ref="hotels" />
+                <xs:element ref="regions" />
+                <xs:element ref="chains" />
+            </xs:sequence>
+            <xs:anyAttribute namespace="http://www.w3.org/2001/XMLSchema-instance" processContents="lax" />
         </xs:complexType>
     </xs:element>
 
@@ -36,15 +37,14 @@
         <xs:sequence>
             <xs:element name="name" type="xs:string" />
             <xs:element name="category" type="hotelCategoryType" />
-            <xs:element name="address" />
+            <xs:element name="address" type="xs:string" />
             <xs:element name="description" type="shortString" minOccurs="0" />
             <xs:element name="stars" type="integer_0-5" />
             <xs:element name="rating" type="float_0-10" />
             <xs:element name="review_count" type="xs:nonNegativeInteger" minOccurs="0" />
             <xs:element name="price" type="priceType" minOccurs="0" />
-            <xs:element name="currency" type="xs:string" default="EUR" />
-            <xs:element name="checkin_time" type="xs:time" minOccurs="0" />
-            <xs:element name="checkout_time" type="xs:time" minOccurs="0" />
+            <xs:element name="checkin_time" type="timeFormat" minOccurs="0" />
+            <xs:element name="checkout_time" type="timeFormat" minOccurs="0" />
             <xs:element name="phone" type="xs:string" minOccurs="0" />
             <xs:element name="email" type="emailType" minOccurs="0" />
             <xs:element name="website" type="xs:anyURI" minOccurs="0" />
@@ -96,6 +96,10 @@
 
     <xs:simpleType name="hotelCategoryType">
         <xs:restriction base="xs:string">
+            <xs:enumeration value="business" />
+            <xs:enumeration value="boutique" />
+            <xs:enumeration value="beach" />
+            <xs:enumeration value="budget" />
             <xs:enumeration value="Hotel" />
             <xs:enumeration value="Boutique Hotel" />
             <xs:enumeration value="Luxury Hotel" />
@@ -146,11 +150,11 @@
             <xs:element name="beds" type="xs:positiveInteger" />
             <xs:element name="capacity" type="integer_1-50" />
             <xs:element name="size" type="xs:float" minOccurs="0" />
-            <xs:element name="price_per_night" type="priceType" minOccurs="0" />
+            <xs:element name="price_per_night" type="xs:decimal" minOccurs="0" />
             <xs:element name="facilities" type="facilitiesType" minOccurs="0" />
         </xs:sequence>
         <xs:attribute name="id" type="xs:ID" use="required" />
-        <xs:attribute name="available_rooms" type="xs:nonNegativeInteger" default="1" />
+        <xs:attribute name="available_count" type="xs:nonNegativeInteger" default="1" />
     </xs:complexType>
 
     <xs:complexType name="facilitiesType">
@@ -166,7 +170,7 @@
         <xs:attribute name="coffee-maker" type="xs:boolean" default="false" />
         <xs:attribute name="hairdryer" type="xs:boolean" default="false" />
         <xs:attribute name="iron" type="xs:boolean" default="false" />
-        <xs:attribute name="work_desk" type="xs:boolean" default="false" />
+        <xs:attribute name="desk" type="xs:boolean" default="false" />
         <xs:attribute name="sitting-area" type="xs:boolean" default="false" />
         <xs:attribute name="wardrobe" type="xs:boolean" default="false" />
         <xs:attribute name="minibar" type="xs:boolean" default="false" />
@@ -196,23 +200,22 @@
 
     <xs:element name="chains">
         <xs:complexType>
-            <xs:all>
-                <xs:element name="chain" type="chainType" minOccurs="0">
+            <xs:sequence>
+                <xs:element name="chain" type="chainType" minOccurs="1" maxOccurs="unbounded">
                     <xs:key name="chainKey">
                         <xs:selector xpath="." />
                         <xs:field xpath="@id" />
                     </xs:key>
                 </xs:element>
-            </xs:all>
+            </xs:sequence>
         </xs:complexType>
     </xs:element>
 
     <xs:complexType name="chainType">
-        <xs:simpleContent>
-            <xs:extension base="xs:string">
-                <xs:attribute name="id" type="xs:ID" use="required" />
-            </xs:extension>
-        </xs:simpleContent>
+        <xs:sequence>
+            <xs:element name="name" type="xs:string" />
+        </xs:sequence>
+        <xs:attribute name="id" type="xs:ID" use="required" />
     </xs:complexType>
 
     <xs:simpleType name="nonEmptyString">
@@ -260,7 +263,7 @@
 
     <xs:complexType name="languagesType">
         <xs:sequence>
-            <xs:element name="language" type="xs:language" minOccurs="1" maxOccurs="unbounded" />
+            <xs:element name="language" type="xs:string" minOccurs="1" maxOccurs="unbounded" />
         </xs:sequence>
     </xs:complexType>
 
@@ -289,6 +292,12 @@
             <xs:enumeration value="week" />
             <xs:enumeration value="month" />
             <xs:enumeration value="stay" />
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="timeFormat">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="([0-1][0-9]|2[0-3]):[0-5][0-9]" />
         </xs:restriction>
     </xs:simpleType>
 

@@ -6,36 +6,57 @@
 		xsi:noNamespaceSchemaLocation CDATA #FIXED "hotels.xsd">
 
 	<!NOTATION jpeg SYSTEM "image/jpeg">
-	<!ENTITY hotel1_image0 PUBLIC "hotel1_image0_identifier" "https://cf.bstatic.com/xdata/images/hotel/max1024/503596503.jpg" NDATA jpeg>
-	<!ENTITY hotel1_image1 PUBLIC "hotel1_image1_identifier" "https://cf.bstatic.com/xdata/images/hotel/max1024/503596442.jpg" NDATA jpeg>
-	<!ENTITY hotel1_image2 PUBLIC "hotel1_image2_identifier" "https://cf.bstatic.com/xdata/images/hotel/max1024/503596451.jpg" NDATA jpeg>
-	<!ENTITY hotel2_image0 PUBLIC "hotel2_image0_identifier" "https://cf.bstatic.com/xdata/images/hotel/max1024/328769763.jpg" NDATA jpeg>
-	<!ENTITY hotel2_image1 PUBLIC "hotel2_image1_identifier" "https://cf.bstatic.com/xdata/images/hotel/max1024/488109065.jpg" NDATA jpeg>
-	<!ENTITY hotel2_image2 PUBLIC "hotel2_image2_identifier" "https://cf.bstatic.com/xdata/images/hotel/max1024/488106788.jpg" NDATA jpeg>
-	<!ENTITY hotel3_image0 PUBLIC "hotel3_image0_identifier" "https://cf.bstatic.com/xdata/images/hotel/max1024/356914115.jpg" NDATA jpeg>
-	<!ENTITY hotel3_image1 PUBLIC "hotel3_image1_identifier" "https://cf.bstatic.com/xdata/images/hotel/max1024/356914185.jpg" NDATA jpeg>
-	<!ENTITY hotel3_image2 PUBLIC "hotel3_image2_identifier" "https://cf.bstatic.com/xdata/images/hotel/max1024/356914193.jpg" NDATA jpeg>
-	<!ENTITY hotel4_image0 PUBLIC "hotel4_image0_identifier" "https://cf.bstatic.com/xdata/images/hotel/max1024/260776203.jpg" NDATA jpeg>
-	<!ENTITY hotel4_image1 PUBLIC "hotel4_image1_identifier" "https://cf.bstatic.com/xdata/images/hotel/max1024/260773021.jpg" NDATA jpeg>
+	<!ENTITY hotel1_image0 PUBLIC "hotel1_image0_identifier" "https://i.ibb.co/5X7LgtGW/image.png" NDATA jpeg>
+	<!ENTITY hotel1_image1 PUBLIC "hotel1_image1_identifier" "https://i.ibb.co/1YmxKL3M/image.png" NDATA jpeg>
+	<!ENTITY hotel1_image2 PUBLIC "hotel1_image2_identifier" "https://i.ibb.co/5WWKdvFT/image.png" NDATA jpeg>
+
+	<!ENTITY hotel2_image0 PUBLIC "hotel2_image0_identifier" "https://i.ibb.co/hRM15LDc/image.png" NDATA jpeg>
+	<!ENTITY hotel2_image1 PUBLIC "hotel2_image1_identifier" "https://i.ibb.co/mCDTFQd7/image.png" NDATA jpeg>
+	<!ENTITY hotel2_image2 PUBLIC "hotel2_image2_identifier" "https://i.ibb.co/qLSVV7z3/image.png" NDATA jpeg>
+
+	<!ENTITY hotel3_image0 PUBLIC "hotel3_image0_identifier" "https://i.ibb.co/xqSc0jr5/image.png" NDATA jpeg>
+	<!ENTITY hotel3_image1 PUBLIC "hotel3_image1_identifier" "https://i.ibb.co/b5KP7wBg/image.png" NDATA jpeg>
+	<!ENTITY hotel3_image2 PUBLIC "hotel3_image2_identifier" "https://i.ibb.co/9HKPD2yy/image.png" NDATA jpeg>
+	
+	<!ENTITY hotel4_image0 PUBLIC "hotel4_image0_identifier" "https://i.ibb.co/9kyvZCgk/image.png" NDATA jpeg>
+	<!ENTITY hotel4_image1 PUBLIC "hotel4_image1_identifier" "https://i.ibb.co/Dgt2Zrq2/image.png" NDATA jpeg>
+	
+	<!ENTITY hotel5_image0 PUBLIC "hotel5_image0_identifier" "https://i.ibb.co/0jttC0t8/image.png" NDATA jpeg>
+	<!ENTITY hotel5_image1 PUBLIC "hotel5_image1_identifier" "https://i.ibb.co/JSsF18k/image.png" NDATA jpeg>
+	<!ENTITY hotel5_image2 PUBLIC "hotel5_image2_identifier" "https://i.ibb.co/Zz15Dx19/image.png" NDATA jpeg>
+	
+	<!ENTITY hotel6_image0 PUBLIC "hotel6_image0_identifier" "https://i.ibb.co/LdTPLN7T/image.png" NDATA jpeg>
+	<!ENTITY hotel6_image1 PUBLIC "hotel6_image1_identifier" "https://i.ibb.co/tpSs4NNq/image.png" NDATA jpeg>
+	
+	<!ENTITY hotel7_image0 PUBLIC "hotel7_image0_identifier" "https://i.ibb.co/jP7d013d/image.png" NDATA jpeg>
+	<!ENTITY hotel7_image1 PUBLIC "hotel7_image1_identifier" "https://i.ibb.co/d0zMRqFH/image.png" NDATA jpeg>
+	
+	<!ENTITY hotel8_image0 PUBLIC "hotel8_image0_identifier" "https://i.ibb.co/Tqqrx35K/image.png" NDATA jpeg>
+	<!ENTITY hotel8_image1 PUBLIC "hotel8_image1_identifier" "https://i.ibb.co/S4R2FrTM/image.png" NDATA jpeg>
 ]>
 
 <catalogue xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="hotels.xsd">
 	<hotels>
-		<!-- Luxury Business Hotel in Sofia -->
-		<hotel id="hotel1" region="region5" chain="chain1" property="hotel" category="business">
+		<hotel id="hotel1" region="region5" chain="chain1" property_type="hotel">
 			<name>Grand Hotel Sofia</name>
+			<category>business</category>
 			<address>1 Narodno Sabranie Square, Sofia Center, 1000 Sofia, Bulgaria</address>
 			<description>Located in the heart of Sofia, the Grand Hotel Sofia offers luxury accommodation with panoramic city views. This prestigious hotel features elegant rooms, world-class dining, and exceptional service. Perfect for business travelers and luxury seekers.</description>
 			<stars>5</stars>
 			<rating>9.3</rating>
 			<review_count>2847</review_count>
-			<price currency="EUR">295</price>
+			<price currency="BGN">520</price>
 			<checkin_time>14:00</checkin_time>
 			<checkout_time>12:00</checkout_time>
 			<phone>+359 2 811 0800</phone>
 			<email>reservations@grandhotelsofia.bg</email>
 			<website>https://www.grandhotelsofia.bg</website>
-			<languages>English, Bulgarian, German, Russian</languages>
+			<languages>
+				<language>English</language>
+				<language>Bulgarian</language>
+				<language>German</language>
+				<language>Russian</language>
+			</languages>
 			<thumbnail source="hotel1_image0" />
 			<gallery>
 				<image source="hotel1_image1" />
@@ -43,40 +64,44 @@
 			</gallery>
 			<amenities breakfast="true" dinner="true" wi-fi="true" parking="true" restaurant="true" bar="true" pool="true" spa="true" fitness="true" conference-rooms="true" room-service="true" airport-shuttle="true" pets="true" />
 			<rooms>
-				<room id="deluxe-city">
+				<room id="deluxe-city" available_count="1">
 					<type>Deluxe Room</type>
 					<beds>1</beds>
 					<capacity>2</capacity>
 					<size>35</size>
-					<price_per_night currency="EUR">180</price_per_night>
-					<facilities non-smoking="true" tv="true" minibar="true" balcony="true" bathroom="true" air-conditioning="true" work_desk="true" hairdryer="true" wardrobe="true" />
+					<price_per_night>180</price_per_night>
+					<facilities non-smoking="true" tv="true" balcony="true" bath="true" air-conditioning="true" desk="true" hairdryer="true" wardrobe="true" />
 				</room>
-				<room id="executive-suite">
+				<room id="executive-suite" available_count="1">
 					<type>Suite</type>
 					<beds>1</beds>
 					<capacity>3</capacity>
 					<size>65</size>
-					<price_per_night currency="EUR">350</price_per_night>
-					<facilities non-smoking="true" tv="true" minibar="true" balcony="true" bathroom="true" air-conditioning="true" work_desk="true" hairdryer="true" wardrobe="true" sitting-area="true" />
+					<price_per_night>350</price_per_night>
+					<facilities non-smoking="true" tv="true" balcony="true" bath="true" air-conditioning="true" desk="true" hairdryer="true" wardrobe="true" sitting-area="true" />
 				</room>
 			</rooms>
 		</hotel>
 
-		<!-- Boutique Hotel in Plovdiv -->
-		<hotel id="hotel2" region="region3" chain="chain2" property="hotel" category="boutique">
+		<hotel id="hotel2" region="region3" chain="chain2" property_type="hotel">
 			<name>Hotel Imperial Plovdiv</name>
+			<category>boutique</category>
 			<address>1A Arch. Kamen Petkov, 4017 Plovdiv, Bulgaria</address>
 			<description>Perfectly located in a central and quiet area, Hotel Imperial Plovdiv offers boutique luxury in the cultural heart of Bulgaria's second largest city. Walking distance to Plovdiv's Old Town and modern shopping districts.</description>
 			<stars>4</stars>
 			<rating>9.2</rating>
 			<review_count>1456</review_count>
-			<price currency="EUR">125</price>
+			<price currency="USD">125</price>
 			<checkin_time>15:00</checkin_time>
 			<checkout_time>11:00</checkout_time>
 			<phone>+359 32 935 000</phone>
 			<email>info@hotelimperial.bg</email>
 			<website>https://www.hotelimperial.bg</website>
-			<languages>English, Bulgarian, German</languages>
+			<languages>
+				<language>English</language>
+				<language>Bulgarian</language>
+				<language>German</language>
+			</languages>
 			<thumbnail source="hotel2_image0" />
 			<gallery>
 				<image source="hotel2_image1" />
@@ -84,28 +109,28 @@
 			</gallery>
 			<amenities breakfast="true" dinner="false" wi-fi="true" parking="true" restaurant="true" bar="true" pool="false" spa="true" fitness="true" conference-rooms="true" room-service="true" airport-shuttle="false" pets="true" />
 			<rooms>
-				<room id="standard-garden">
+				<room id="standard-garden" available_count="1">
 					<type>Standard Room</type>
 					<beds>2</beds>
 					<capacity>3</capacity>
 					<size>28</size>
-					<price_per_night currency="EUR">85</price_per_night>
-					<facilities non-smoking="true" tv="true" minibar="true" balcony="false" bathroom="true" air-conditioning="true" work_desk="false" hairdryer="true" wardrobe="true" />
+					<price_per_night>85</price_per_night>
+					<facilities non-smoking="true" tv="true" balcony="false" bath="true" air-conditioning="true" desk="false" hairdryer="true" wardrobe="true" />
 				</room>
-				<room id="premium-city">
+				<room id="premium-city" available_count="1">
 					<type>Deluxe Room</type>
 					<beds>1</beds>
 					<capacity>2</capacity>
 					<size>32</size>
-					<price_per_night currency="EUR">120</price_per_night>
-					<facilities non-smoking="true" tv="true" minibar="true" balcony="true" bathroom="true" air-conditioning="true" work_desk="true" hairdryer="true" wardrobe="true" />
+					<price_per_night>120</price_per_night>
+					<facilities non-smoking="true" tv="true" balcony="true" bath="true" air-conditioning="true" desk="true" hairdryer="true" wardrobe="true" />
 				</room>
 			</rooms>
 		</hotel>
 
-		<!-- Resort Hotel in Varna -->
-		<hotel id="hotel3" region="region6" property="resort" category="beach">
+		<hotel id="hotel3" region="region6" property_type="resort">
 			<name>Seaside Palace Resort</name>
+			<category>beach</category>
 			<address>Golden Sands Beach, 9007 Varna, Bulgaria</address>
 			<description>Luxury beachfront resort offering direct access to the pristine Golden Sands beach. Features multiple restaurants, spa facilities, and comprehensive entertainment programs for families and couples.</description>
 			<stars>5</stars>
@@ -117,7 +142,13 @@
 			<phone>+359 52 817 200</phone>
 			<email>reservations@seasidepalace.bg</email>
 			<website>https://www.seasidepalace.bg</website>
-			<languages>English, Bulgarian, German, Russian, French</languages>
+			<languages>
+				<language>English</language>
+				<language>Bulgarian</language>
+				<language>German</language>
+				<language>Russian</language>
+				<language>French</language>
+			</languages>
 			<thumbnail source="hotel3_image0" />
 			<gallery>
 				<image source="hotel3_image1" />
@@ -125,61 +156,245 @@
 			</gallery>
 			<amenities breakfast="true" dinner="true" wi-fi="true" parking="true" restaurant="true" bar="true" pool="true" outdoor-pool="true" spa="true" fitness="true" massage="true" sauna="true" conference-rooms="true" room-service="true" airport-shuttle="true" pets="false" kids-club="true" playground="true" beach-access="true" />
 			<rooms>
-				<room id="ocean-suite">
+				<room id="ocean-suite" available_count="1">
 					<type>Suite</type>
 					<beds>1</beds>
 					<capacity>3</capacity>
 					<size>55</size>
-					<price_per_night currency="EUR">280</price_per_night>
-					<facilities non-smoking="true" tv="true" minibar="true" balcony="true" bathroom="true" air-conditioning="true" work_desk="false" hairdryer="true" wardrobe="true" sitting-area="true" />
+					<price_per_night>280</price_per_night>
+					<facilities non-smoking="true" tv="true" balcony="true" bath="true" air-conditioning="true" desk="false" hairdryer="true" wardrobe="true" sitting-area="true" />
 				</room>
-				<room id="family-villa">
+				<room id="family-villa" available_count="1">
 					<type>Villa</type>
 					<beds>3</beds>
 					<capacity>6</capacity>
 					<size>85</size>
-					<price_per_night currency="EUR">450</price_per_night>
-					<facilities non-smoking="true" kitchen="true" tv="true" minibar="true" balcony="true" bathroom="true" air-conditioning="true" work_desk="false" hairdryer="true" wardrobe="true" sitting-area="true" />
+					<price_per_night>450</price_per_night>
+					<facilities non-smoking="true" kitchen="true" tv="true" balcony="true" bath="true" air-conditioning="true" desk="false" hairdryer="true" wardrobe="true" sitting-area="true" />
 				</room>
 			</rooms>
 		</hotel>
 
-		<!-- Budget Hotel in Dupnitsa -->
-		<hotel id="hotel4" region="region2" property="hotel" category="budget">
+		<hotel id="hotel4" region="region2" property_type="hotel">
 			<name>Hotel Rila</name>
+			<category>budget</category>
 			<address>Svoboda Square N 1, 2600 Dupnitsa, Bulgaria</address>
 			<description>Comfortable and affordable accommodation in the center of Dupnitsa. Perfect for travelers exploring the Rila Mountains and Rila Monastery. Offers essential amenities and Bulgarian hospitality at budget-friendly prices.</description>
 			<stars>3</stars>
 			<rating>8.5</rating>
 			<review_count>892</review_count>
-			<price currency="EUR">45</price>
+			<price currency="AUD">60</price>
 			<checkin_time>14:00</checkin_time>
 			<checkout_time>11:00</checkout_time>
 			<phone>+359 701 23456</phone>
 			<email>info@hotelrila.bg</email>
 			<website>https://www.hotelrila.bg</website>
-			<languages>English, Bulgarian</languages>
+			<languages>
+				<language>English</language>
+				<language>Bulgarian</language>
+			</languages>
 			<thumbnail source="hotel4_image0" />
 			<gallery>
 				<image source="hotel4_image1" />
 			</gallery>
 			<amenities breakfast="false" dinner="false" wi-fi="true" parking="true" restaurant="true" bar="false" pool="false" spa="false" fitness="false" conference-rooms="false" room-service="false" airport-shuttle="false" pets="true" />
 			<rooms>
-				<room id="standard-double">
+				<room id="standard-double" available_count="1">
 					<type>Standard Room</type>
 					<beds>1</beds>
 					<capacity>2</capacity>
 					<size>18</size>
-					<price_per_night currency="EUR">35</price_per_night>
-					<facilities non-smoking="false" tv="true" minibar="false" balcony="false" bathroom="true" air-conditioning="false" work_desk="false" hairdryer="false" wardrobe="true" />
+					<price_per_night>35</price_per_night>
+					<facilities non-smoking="false" tv="true" balcony="false" bath="true" air-conditioning="false" desk="false" hairdryer="false" wardrobe="true" />
 				</room>
-				<room id="triple-room">
+				<room id="triple-room" available_count="1">
 					<type>Triple Room</type>
 					<beds>3</beds>
 					<capacity>3</capacity>
 					<size>22</size>
-					<price_per_night currency="EUR">45</price_per_night>
-					<facilities non-smoking="false" tv="true" minibar="false" balcony="false" bathroom="true" air-conditioning="false" work_desk="false" hairdryer="false" wardrobe="true" />
+					<price_per_night>45</price_per_night>
+					<facilities non-smoking="false" tv="true" balcony="false" bath="true" air-conditioning="false" desk="false" hairdryer="false" wardrobe="true" />
+				</room>
+			</rooms>
+		</hotel>
+
+		<hotel id="hotel5" region="region7" chain="chain3" property_type="hotel">
+			<name>Coastal View Hotel Burgas</name>
+			<category>business</category>
+			<address>1 Primorski Boulevard, 8000 Burgas, Bulgaria</address>
+			<description>Modern hotel located on the Black Sea coast in Burgas. Features comfortable rooms with sea views, a rooftop terrace, and easy access to the beach. Ideal for both business travelers and vacationers.</description>
+			<stars>4</stars>
+			<rating>8.7</rating>
+			<review_count>1876</review_count>
+			<price currency="EUR">95</price>
+			<checkin_time>15:00</checkin_time>
+			<checkout_time>11:00</checkout_time>
+			<phone>+359 56 844 100</phone>
+			<email>info@coastalviewburgas.bg</email>
+			<website>https://www.coastalviewburgas.bg</website>
+			<languages>
+				<language>English</language>
+				<language>Bulgarian</language>
+				<language>German</language>
+				<language>Russian</language>
+			</languages>
+			<thumbnail source="hotel5_image0" />
+			<gallery>
+				<image source="hotel5_image1" />
+				<image source="hotel5_image2" />
+			</gallery>
+			<amenities breakfast="true" dinner="false" wi-fi="true" parking="true" restaurant="true" bar="true" pool="false" spa="false" fitness="true" conference-rooms="true" room-service="true" airport-shuttle="true" pets="false" />
+			<rooms>
+				<room id="sea-view-standard" available_count="2">
+					<type>Standard Room</type>
+					<beds>2</beds>
+					<capacity>2</capacity>
+					<size>25</size>
+					<price_per_night>75</price_per_night>
+					<facilities non-smoking="true" tv="true" balcony="true" bath="true" air-conditioning="true" desk="true" hairdryer="true" wardrobe="true" />
+				</room>
+				<room id="sea-view-deluxe" available_count="1">
+					<type>Deluxe Room</type>
+					<beds>1</beds>
+					<capacity>2</capacity>
+					<size>35</size>
+					<price_per_night>110</price_per_night>
+					<facilities non-smoking="true" tv="true" balcony="true" bath="true" air-conditioning="true" desk="true" hairdryer="true" wardrobe="true" sitting-area="true" />
+				</room>
+			</rooms>
+		</hotel>
+
+		<hotel id="hotel6" region="region8" chain="chain1" property_type="hotel">
+			<name>Tsarevets Palace Hotel</name>
+			<category>business</category>
+			<address>2 Tsar Asen Square, 5000 Veliko Tarnovo, Bulgaria</address>
+			<description>Luxury hotel in the historic capital of Bulgaria, offering stunning views of the Tsarevets Fortress. Combines modern amenities with traditional Bulgarian architecture. Perfect for history enthusiasts and luxury travelers.</description>
+			<stars>5</stars>
+			<rating>9.4</rating>
+			<review_count>2156</review_count>
+			<price currency="EUR">320</price>
+			<checkin_time>14:00</checkin_time>
+			<checkout_time>12:00</checkout_time>
+			<phone>+359 62 622 000</phone>
+			<email>reservations@tsarevetspalace.bg</email>
+			<website>https://www.tsarevetspalace.bg</website>
+			<languages>
+				<language>English</language>
+				<language>Bulgarian</language>
+				<language>German</language>
+				<language>Russian</language>
+				<language>French</language>
+			</languages>
+			<thumbnail source="hotel6_image0" />
+			<gallery>
+				<image source="hotel6_image1" />
+			</gallery>
+			<amenities breakfast="true" dinner="true" wi-fi="true" parking="true" restaurant="true" bar="true" pool="true" indoor-pool="true" spa="true" fitness="true" massage="true" sauna="true" conference-rooms="true" room-service="true" airport-shuttle="true" pets="true" />
+			<rooms>
+				<room id="historic-suite" available_count="1">
+					<type>Suite</type>
+					<beds>1</beds>
+					<capacity>3</capacity>
+					<size>60</size>
+					<price_per_night>280</price_per_night>
+					<facilities non-smoking="true" tv="true" balcony="true" bath="true" air-conditioning="true" desk="true" hairdryer="true" wardrobe="true" sitting-area="true" />
+				</room>
+				<room id="fortress-view-deluxe" available_count="2">
+					<type>Deluxe Room</type>
+					<beds>1</beds>
+					<capacity>2</capacity>
+					<size>40</size>
+					<price_per_night>200</price_per_night>
+					<facilities non-smoking="true" tv="true" balcony="true" bath="true" air-conditioning="true" desk="true" hairdryer="true" wardrobe="true" />
+				</room>
+			</rooms>
+		</hotel>
+
+		<hotel id="hotel7" region="region5" chain="chain3" property_type="apartment">
+			<name>City Center Apartments Sofia</name>
+			<category>budget</category>
+			<address>15 Vitosha Boulevard, 1000 Sofia, Bulgaria</address>
+			<description>Modern serviced apartments in the heart of Sofia's main shopping street. Fully equipped kitchens, spacious living areas, and excellent location make it perfect for extended stays and families.</description>
+			<stars>3</stars>
+			<rating>8.6</rating>
+			<review_count>1123</review_count>
+			<price currency="USD">65</price>
+			<checkin_time>15:00</checkin_time>
+			<checkout_time>11:00</checkout_time>
+			<phone>+359 2 987 6543</phone>
+			<email>bookings@citycenterapts.bg</email>
+			<website>https://www.citycenterapts.bg</website>
+			<languages>
+				<language>English</language>
+				<language>Bulgarian</language>
+				<language>German</language>
+			</languages>
+			<thumbnail source="hotel7_image0" />
+			<gallery>
+				<image source="hotel7_image1" />
+			</gallery>
+			<amenities breakfast="false" dinner="false" wi-fi="true" parking="true" restaurant="false" bar="false" pool="false" spa="false" fitness="false" conference-rooms="false" room-service="false" airport-shuttle="false" pets="true" />
+			<rooms>
+				<room id="studio-apartment" available_count="3">
+					<type>Apartment</type>
+					<beds>1</beds>
+					<capacity>2</capacity>
+					<size>30</size>
+					<price_per_night>55</price_per_night>
+					<facilities non-smoking="true" kitchen="true" tv="true" balcony="false" bath="true" air-conditioning="true" desk="true" hairdryer="true" wardrobe="true" />
+				</room>
+				<room id="one-bedroom-apartment" available_count="2">
+					<type>Apartment</type>
+					<beds>1</beds>
+					<capacity>4</capacity>
+					<size>50</size>
+					<price_per_night>85</price_per_night>
+					<facilities non-smoking="true" kitchen="true" tv="true" balcony="true" bath="true" air-conditioning="true" desk="true" hairdryer="true" wardrobe="true" sitting-area="true" />
+				</room>
+			</rooms>
+		</hotel>
+
+		<hotel id="hotel8" region="region3" chain="chain2" property_type="hotel">
+			<name>Old Town Boutique Hotel</name>
+			<category>boutique</category>
+			<address>5 Saborna Street, 4000 Plovdiv, Bulgaria</address>
+			<description>Charming boutique hotel in Plovdiv's historic Old Town, housed in a beautifully restored 19th-century building. Each room is uniquely decorated, combining antique furniture with modern comforts. Steps away from ancient Roman ruins and art galleries.</description>
+			<stars>4</stars>
+			<rating>9.0</rating>
+			<review_count>987</review_count>
+			<price currency="EUR">110</price>
+			<checkin_time>14:00</checkin_time>
+			<checkout_time>11:00</checkout_time>
+			<phone>+359 32 633 555</phone>
+			<email>hello@oldtownboutique.bg</email>
+			<website>https://www.oldtownboutique.bg</website>
+			<languages>
+				<language>English</language>
+				<language>Bulgarian</language>
+				<language>German</language>
+				<language>French</language>
+			</languages>
+			<thumbnail source="hotel8_image0" />
+			<gallery>
+				<image source="hotel8_image1" />
+			</gallery>
+			<amenities breakfast="true" dinner="false" wi-fi="true" parking="false" restaurant="true" bar="true" pool="false" spa="false" fitness="false" conference-rooms="false" room-service="true" airport-shuttle="false" pets="false" />
+			<rooms>
+				<room id="heritage-room" available_count="2">
+					<type>Standard Room</type>
+					<beds>1</beds>
+					<capacity>2</capacity>
+					<size>22</size>
+					<price_per_night>90</price_per_night>
+					<facilities non-smoking="true" tv="true" balcony="false" bath="true" air-conditioning="true" desk="false" hairdryer="true" wardrobe="true" />
+				</room>
+				<room id="antique-suite" available_count="1">
+					<type>Suite</type>
+					<beds>1</beds>
+					<capacity>2</capacity>
+					<size>38</size>
+					<price_per_night>140</price_per_night>
+					<facilities non-smoking="true" tv="true" balcony="true" bath="true" air-conditioning="true" desk="true" hairdryer="true" wardrobe="true" sitting-area="true" />
 				</room>
 			</rooms>
 		</hotel>
@@ -206,10 +421,27 @@
 			<municipality>Varna Province</municipality>
 			<city>Varna</city>
 		</region>
+		<region id="region7">
+			<country>Bulgaria</country>
+			<municipality>Burgas Province</municipality>
+			<city>Burgas</city>
+		</region>
+		<region id="region8">
+			<country>Bulgaria</country>
+			<municipality>Veliko Tarnovo Province</municipality>
+			<city>Veliko Tarnovo</city>
+		</region>
 	</regions>
 
 	<chains>
-		<chain id="chain1">Luxury Hotels International</chain>
-		<chain id="chain2">Radisson Individuals</chain>
+		<chain id="chain1">
+			<name>Luxury Hotels International</name>
+		</chain>
+		<chain id="chain2">
+			<name>Radisson Individuals</name>
+		</chain>
+		<chain id="chain3">
+			<name>Balkan Hospitality Group</name>
+		</chain>
 	</chains>
 </catalogue>

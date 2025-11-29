@@ -1,12 +1,35 @@
+<!NOTATION jpeg SYSTEM "image/jpeg">
+<!ENTITY hotel1_image0 PUBLIC "hotel1_image0_identifier" "https://cf.bstatic.com/xdata/images/hotel/max1024/503596503.jpg" NDATA jpeg>
+<!ENTITY hotel1_image1 PUBLIC "hotel1_image1_identifier" "https://cf.bstatic.com/xdata/images/hotel/max1024/503596442.jpg" NDATA jpeg>
+<!ENTITY hotel1_image2 PUBLIC "hotel1_image2_identifier" "https://cf.bstatic.com/xdata/images/hotel/max1024/503596451.jpg" NDATA jpeg>
+<!ENTITY hotel2_image0 PUBLIC "hotel2_image0_identifier" "https://cf.bstatic.com/xdata/images/hotel/max1024/328769763.jpg" NDATA jpeg>
+<!ENTITY hotel2_image1 PUBLIC "hotel2_image1_identifier" "https://cf.bstatic.com/xdata/images/hotel/max1024/488109065.jpg" NDATA jpeg>
+<!ENTITY hotel2_image2 PUBLIC "hotel2_image2_identifier" "https://cf.bstatic.com/xdata/images/hotel/max1024/488106788.jpg" NDATA jpeg>
+<!ENTITY hotel3_image0 PUBLIC "hotel3_image0_identifier" "https://cf.bstatic.com/xdata/images/hotel/max1024/356914115.jpg" NDATA jpeg>
+<!ENTITY hotel3_image1 PUBLIC "hotel3_image1_identifier" "https://cf.bstatic.com/xdata/images/hotel/max1024/356914185.jpg" NDATA jpeg>
+<!ENTITY hotel3_image2 PUBLIC "hotel3_image2_identifier" "https://cf.bstatic.com/xdata/images/hotel/max1024/356914193.jpg" NDATA jpeg>
+<!ENTITY hotel4_image0 PUBLIC "hotel4_image0_identifier" "https://cf.bstatic.com/xdata/images/hotel/max1024/260776203.jpg" NDATA jpeg>
+<!ENTITY hotel4_image1 PUBLIC "hotel4_image1_identifier" "https://cf.bstatic.com/xdata/images/hotel/max1024/260773021.jpg" NDATA jpeg>
+<!ENTITY hotel5_image0 PUBLIC "hotel5_image0_identifier" "https://cf.bstatic.com/xdata/images/hotel/max1024/123456789.jpg" NDATA jpeg>
+<!ENTITY hotel5_image1 PUBLIC "hotel5_image1_identifier" "https://cf.bstatic.com/xdata/images/hotel/max1024/123456790.jpg" NDATA jpeg>
+<!ENTITY hotel5_image2 PUBLIC "hotel5_image2_identifier" "https://cf.bstatic.com/xdata/images/hotel/max1024/123456791.jpg" NDATA jpeg>
+<!ENTITY hotel6_image0 PUBLIC "hotel6_image0_identifier" "https://cf.bstatic.com/xdata/images/hotel/max1024/234567890.jpg" NDATA jpeg>
+<!ENTITY hotel6_image1 PUBLIC "hotel6_image1_identifier" "https://cf.bstatic.com/xdata/images/hotel/max1024/234567891.jpg" NDATA jpeg>
+<!ENTITY hotel7_image0 PUBLIC "hotel7_image0_identifier" "https://cf.bstatic.com/xdata/images/hotel/max1024/345678901.jpg" NDATA jpeg>
+<!ENTITY hotel7_image1 PUBLIC "hotel7_image1_identifier" "https://cf.bstatic.com/xdata/images/hotel/max1024/345678902.jpg" NDATA jpeg>
+<!ENTITY hotel8_image0 PUBLIC "hotel8_image0_identifier" "https://cf.bstatic.com/xdata/images/hotel/max1024/456789012.jpg" NDATA jpeg>
+<!ENTITY hotel8_image1 PUBLIC "hotel8_image1_identifier" "https://cf.bstatic.com/xdata/images/hotel/max1024/456789013.jpg" NDATA jpeg>
+
 <!ELEMENT catalogue (hotels,regions,chains)>
+<!ATTLIST catalogue xmlns:xsi CDATA #FIXED "http://www.w3.org/2001/XMLSchema-instance">
+<!ATTLIST catalogue xsi:noNamespaceSchemaLocation CDATA #FIXED "hotels.xsd">
 
 <!ELEMENT hotels (hotel+)>
-<!ELEMENT hotel (name,category,address,description?,stars,rating,review_count?,price?,currency?,checkin_time?,checkout_time?,phone?,email?,website?,languages?,thumbnail,gallery?,amenities,rooms)>
+<!ELEMENT hotel (name,category,address,description?,stars,rating,review_count?,price?,checkin_time?,checkout_time?,phone?,email?,website?,languages?,thumbnail,gallery?,amenities,rooms)>
 <!ATTLIST hotel id ID #REQUIRED>
 <!ATTLIST hotel region IDREF #REQUIRED>
 <!ATTLIST hotel chain IDREF #IMPLIED>
 <!ATTLIST hotel property_type (hotel|apartment|hostel|guesthouse|vacation-rental|bed-and-breakfast|motel|resort) "hotel">
-<!ATTLIST hotel is_available (true|false) "true">
 
 <!ELEMENT name (#PCDATA)>
 <!ELEMENT category (#PCDATA)>
@@ -18,7 +41,6 @@
 <!ELEMENT price (#PCDATA)>
 <!ATTLIST price currency CDATA "EUR">
 <!ATTLIST price per (night|week|month|stay) "night">
-<!ELEMENT currency (#PCDATA)>
 <!ELEMENT checkin_time (#PCDATA)>
 <!ELEMENT checkout_time (#PCDATA)>
 <!ELEMENT phone (#PCDATA)>
@@ -63,15 +85,13 @@
 <!ELEMENT rooms (room+)>
 <!ELEMENT room (type,beds,capacity,size?,price_per_night?,facilities?)>
 <!ATTLIST room id ID #REQUIRED>
-<!ATTLIST room available_rooms CDATA "1">
+<!ATTLIST room available_count CDATA "1">
 
 <!ELEMENT type (#PCDATA)>
 <!ELEMENT beds (#PCDATA)>
 <!ELEMENT capacity (#PCDATA)>
 <!ELEMENT size (#PCDATA)>
 <!ELEMENT price_per_night (#PCDATA)>
-<!ATTLIST price_per_night currency CDATA "EUR">
-<!ATTLIST price_per_night per (night|week|month|stay) "night">
 
 <!ELEMENT facilities EMPTY>
 <!ATTLIST facilities non-smoking (true|false) "true">
@@ -97,5 +117,5 @@
 <!ELEMENT city (#PCDATA)>
 
 <!ELEMENT chains (chain+)>
-<!ELEMENT chain (#PCDATA)>
+<!ELEMENT chain (name)>
 <!ATTLIST chain id ID #REQUIRED>
