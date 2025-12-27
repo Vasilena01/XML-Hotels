@@ -57,7 +57,6 @@
         <xs:attribute name="region" type="xs:IDREF" use="required" />
         <xs:attribute name="chain" type="xs:IDREF" />
         <xs:attribute name="property_type" type="propertyType" default="hotel" />
-        <xs:attribute name="is_available" type="xs:boolean" default="true" />
     </xs:complexType>
 
     <xs:element name="address" type="xs:string">
