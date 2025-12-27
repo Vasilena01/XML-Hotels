@@ -48,7 +48,6 @@
             <xs:element name="phone" type="xs:string" minOccurs="0" />
             <xs:element name="email" type="emailType" minOccurs="0" />
             <xs:element name="website" type="xs:anyURI" minOccurs="0" />
-            <xs:element name="languages" type="languagesType" minOccurs="0" />
             <xs:element name="thumbnail" type="imageType" />
             <xs:element name="gallery" minOccurs="0" />
             <xs:element name="amenities" type="amenitiesType" minOccurs="1"/>
@@ -259,12 +258,6 @@
                 <xs:attribute name="per" type="periodType" default="night" />
             </xs:extension>
         </xs:simpleContent>
-    </xs:complexType>
-
-    <xs:complexType name="languagesType">
-        <xs:sequence>
-            <xs:element name="language" type="xs:string" minOccurs="1" maxOccurs="unbounded" />
-        </xs:sequence>
     </xs:complexType>
 
     <xs:simpleType name="emailType">

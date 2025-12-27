@@ -51,12 +51,6 @@
 			<phone>+359 2 811 0800</phone>
 			<email>reservations@grandhotelsofia.bg</email>
 			<website>https://www.grandhotelsofia.bg</website>
-			<languages>
-				<language>English</language>
-				<language>Bulgarian</language>
-				<language>German</language>
-				<language>Russian</language>
-			</languages>
 			<thumbnail source="hotel1_image0" />
 			<gallery>
 				<image source="hotel1_image1" />
@@ -97,11 +91,6 @@
 			<phone>+359 32 935 000</phone>
 			<email>info@hotelimperial.bg</email>
 			<website>https://www.hotelimperial.bg</website>
-			<languages>
-				<language>English</language>
-				<language>Bulgarian</language>
-				<language>German</language>
-			</languages>
 			<thumbnail source="hotel2_image0" />
 			<gallery>
 				<image source="hotel2_image1" />
@@ -142,13 +131,6 @@
 			<phone>+359 52 817 200</phone>
 			<email>reservations@seasidepalace.bg</email>
 			<website>https://www.seasidepalace.bg</website>
-			<languages>
-				<language>English</language>
-				<language>Bulgarian</language>
-				<language>German</language>
-				<language>Russian</language>
-				<language>French</language>
-			</languages>
 			<thumbnail source="hotel3_image0" />
 			<gallery>
 				<image source="hotel3_image1" />
@@ -189,10 +171,6 @@
 			<phone>+359 701 23456</phone>
 			<email>info@hotelrila.bg</email>
 			<website>https://www.hotelrila.bg</website>
-			<languages>
-				<language>English</language>
-				<language>Bulgarian</language>
-			</languages>
 			<thumbnail source="hotel4_image0" />
 			<gallery>
 				<image source="hotel4_image1" />
@@ -232,12 +210,6 @@
 			<phone>+359 56 844 100</phone>
 			<email>info@coastalviewburgas.bg</email>
 			<website>https://www.coastalviewburgas.bg</website>
-			<languages>
-				<language>English</language>
-				<language>Bulgarian</language>
-				<language>German</language>
-				<language>Russian</language>
-			</languages>
 			<thumbnail source="hotel5_image0" />
 			<gallery>
 				<image source="hotel5_image1" />
@@ -278,13 +250,6 @@
 			<phone>+359 62 622 000</phone>
 			<email>reservations@tsarevetspalace.bg</email>
 			<website>https://www.tsarevetspalace.bg</website>
-			<languages>
-				<language>English</language>
-				<language>Bulgarian</language>
-				<language>German</language>
-				<language>Russian</language>
-				<language>French</language>
-			</languages>
 			<thumbnail source="hotel6_image0" />
 			<gallery>
 				<image source="hotel6_image1" />
@@ -324,11 +289,6 @@
 			<phone>+359 2 987 6543</phone>
 			<email>bookings@citycenterapts.bg</email>
 			<website>https://www.citycenterapts.bg</website>
-			<languages>
-				<language>English</language>
-				<language>Bulgarian</language>
-				<language>German</language>
-			</languages>
 			<thumbnail source="hotel7_image0" />
 			<gallery>
 				<image source="hotel7_image1" />
@@ -368,12 +328,6 @@
 			<phone>+359 32 633 555</phone>
 			<email>hello@oldtownboutique.bg</email>
 			<website>https://www.oldtownboutique.bg</website>
-			<languages>
-				<language>English</language>
-				<language>Bulgarian</language>
-				<language>German</language>
-				<language>French</language>
-			</languages>
 			<thumbnail source="hotel8_image0" />
 			<gallery>
 				<image source="hotel8_image1" />
