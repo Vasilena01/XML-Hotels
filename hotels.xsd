@@ -1,322 +1,250 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
 
-    <xs:element name="catalogue">
-        <xs:complexType>
-            <xs:sequence>
-                <xs:element ref="hotels" />
-                <xs:element ref="regions" />
-                <xs:element ref="chains" />
-            </xs:sequence>
-            <xs:anyAttribute namespace="http://www.w3.org/2001/XMLSchema-instance" processContents="lax" />
-        </xs:complexType>
-    </xs:element>
-
-    <xs:element name="hotels">
-        <xs:complexType>
-            <xs:sequence>
-                <xs:element name="hotel" type="hotelType" minOccurs="1" maxOccurs="unbounded">
-                    <xs:key name="hotelKey">
-                        <xs:selector xpath="." />
-                        <xs:field xpath="@id" />
-                    </xs:key>
-                    <xs:keyref name="regionKeyRef" refer="regionKey">
-                        <xs:selector xpath="catalogue/hotels/hotel" />
-                        <xs:field xpath="@region" />
-                    </xs:keyref>
-                    <xs:keyref name="chainKeyRef" refer="chainKey">
-                        <xs:selector xpath="catalogue/hotels/hotel" />
-                        <xs:field xpath="@chain" />
-                    </xs:keyref>
-                </xs:element>
-            </xs:sequence>
-        </xs:complexType>
-    </xs:element>
-
-    <xs:complexType name="hotelType">
-        <xs:sequence>
-            <xs:element name="name" type="xs:string" />
-            <xs:element name="category" type="hotelCategoryType" />
-            <xs:element name="address" type="xs:string" />
-            <xs:element name="description" type="shortString" minOccurs="0" />
-            <xs:element name="stars" type="integer_0-5" />
-            <xs:element name="rating" type="float_0-10" />
-            <xs:element name="review_count" type="xs:nonNegativeInteger" minOccurs="0" />
-            <xs:element name="price" type="priceType" minOccurs="0" />
-            <xs:element name="checkin_time" type="timeFormat" minOccurs="0" />
-            <xs:element name="checkout_time" type="timeFormat" minOccurs="0" />
-            <xs:element name="phone" type="xs:string" minOccurs="0" />
-            <xs:element name="email" type="emailType" minOccurs="0" />
-            <xs:element name="website" type="xs:anyURI" minOccurs="0" />
-            <xs:element name="thumbnail" type="imageType" />
-            <xs:element name="gallery" minOccurs="0" />
-            <xs:element name="amenities" type="amenitiesType" minOccurs="1"/>
-            <xs:element name="rooms" />
-        </xs:sequence>
-        <xs:attribute name="id" type="xs:ID" use="required" />
-        <xs:attribute name="region" type="xs:IDREF" use="required" />
-        <xs:attribute name="chain" type="xs:IDREF" />
-        <xs:attribute name="property_type" type="propertyType" default="hotel" />
+  <xs:element name="catalogue">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="hotels" />
+        <xs:element ref="regions" />
+        <xs:element ref="chains" />
+      </xs:sequence>
+      <xs:anyAttribute namespace="http://www.w3.org/2001/XMLSchema-instance" processContents="lax" />
     </xs:complexType>
+  </xs:element>
 
-    <xs:element name="address" type="xs:string">
-        <xs:unique name="hotelAddressUnique">
+  <xs:element name="hotels">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="hotel" type="hotelType" minOccurs="1" maxOccurs="unbounded">
+          <xs:key name="hotelKey">
             <xs:selector xpath="." />
-            <xs:field xpath="." />
-        </xs:unique>
-    </xs:element>
-
-    <xs:complexType name="amenitiesType">
-        <xs:attribute name="breakfast" type="xs:boolean" default="false" />
-        <xs:attribute name="dinner" type="xs:boolean" default="false" />
-        <xs:attribute name="wi-fi" type="xs:boolean" default="false" />
-        <xs:attribute name="parking" type="xs:boolean" default="false" />
-        <xs:attribute name="restaurant" type="xs:boolean" default="false" />
-        <xs:attribute name="bar" type="xs:boolean" default="false" />
-        <xs:attribute name="pool" type="xs:boolean" default="false" />
-        <xs:attribute name="indoor-pool" type="xs:boolean" default="false" />
-        <xs:attribute name="outdoor-pool" type="xs:boolean" default="false" />
-        <xs:attribute name="fitness" type="xs:boolean" default="false" />
-        <xs:attribute name="spa" type="xs:boolean" default="false" />
-        <xs:attribute name="massage" type="xs:boolean" default="false" />
-        <xs:attribute name="sauna" type="xs:boolean" default="false" />
-        <xs:attribute name="hot-tub" type="xs:boolean" default="false" />
-        <xs:attribute name="conference-rooms" type="xs:boolean" default="false" />
-        <xs:attribute name="pets" type="xs:boolean" default="false" />
-        <xs:attribute name="room-service" type="xs:boolean" default="false" />
-        <xs:attribute name="shuttle-service" type="xs:boolean" default="false" />
-        <xs:attribute name="airport-shuttle" type="xs:boolean" default="false" />
-        <xs:attribute name="car-rental" type="xs:boolean" default="false" />
-        <xs:attribute name="kids-club" type="xs:boolean" default="false" />
-        <xs:attribute name="playground" type="xs:boolean" default="false" />
-        <xs:attribute name="beach-access" type="xs:boolean" default="false" />
+            <xs:field xpath="@id" />
+          </xs:key>
+          <xs:keyref name="regionKeyRef" refer="regionKey">
+            <xs:selector xpath="catalogue/hotels/hotel" />
+            <xs:field xpath="@region" />
+          </xs:keyref>
+          <xs:keyref name="chainKeyRef" refer="chainKey">
+            <xs:selector xpath="catalogue/hotels/hotel" />
+            <xs:field xpath="@chain" />
+          </xs:keyref>
+        </xs:element>
+      </xs:sequence>
     </xs:complexType>
+  </xs:element>
 
-    <xs:simpleType name="hotelCategoryType">
-        <xs:restriction base="xs:string">
-            <xs:enumeration value="business" />
-            <xs:enumeration value="boutique" />
-            <xs:enumeration value="beach" />
-            <xs:enumeration value="budget" />
-            <xs:enumeration value="Hotel" />
-            <xs:enumeration value="Boutique Hotel" />
-            <xs:enumeration value="Luxury Hotel" />
-            <xs:enumeration value="Business Hotel" />
-            <xs:enumeration value="Apartment" />
-            <xs:enumeration value="Hostel" />
-            <xs:enumeration value="Guesthouse" />
-            <xs:enumeration value="Villa" />
-            <xs:enumeration value="Resort" />
-            <xs:enumeration value="Lodge" />
-            <xs:enumeration value="Residence" />
-            <xs:enumeration value="House" />
-            <xs:enumeration value="Chalet" />
-            <xs:enumeration value="Extended Stay" />
-            <xs:enumeration value="All-Inclusive Resort" />
-            <xs:enumeration value="Spa Resort" />
-            <xs:enumeration value="Golf Resort" />
-            <xs:enumeration value="Ski Resort" />
-            <xs:enumeration value="Beach Resort" />
-            <xs:enumeration value="Inn" />
-            <xs:enumeration value="Vacation Rental" />
-        </xs:restriction>
-    </xs:simpleType>
-
-    <xs:element name="gallery">
+  <xs:complexType name="hotelType">
+    <xs:sequence>
+      <xs:element name="name" type="xs:string" />
+      <xs:element name="category" type="hotelCategoryType" />
+      <xs:element name="address" type="xs:string" />
+      <xs:element name="description" type="shortString" minOccurs="0" />
+      <xs:element name="stars" type="integer_0-5" />
+      <xs:element name="rating" type="float_0-10" />
+      <xs:element name="review_count" type="xs:nonNegativeInteger" minOccurs="0" />
+      <xs:element name="price" type="priceType" minOccurs="0" />
+      <xs:element name="checkin_time" type="timeFormat" minOccurs="0" />
+      <xs:element name="checkout_time" type="timeFormat" minOccurs="0" />
+      <xs:element name="phone" type="xs:string" minOccurs="0" />
+      <xs:element name="email" type="emailType" minOccurs="0" />
+      <xs:element name="website" type="xs:anyURI" minOccurs="0" />
+      <xs:element name="thumbnail" type="imageType" />
+      <xs:element name="gallery" minOccurs="0">
         <xs:complexType>
-            <xs:sequence>
-                <xs:element name="image" type="imageType" minOccurs="1" maxOccurs="100" />
-            </xs:sequence>
+          <xs:sequence>
+            <xs:element name="image" type="imageType" minOccurs="1" maxOccurs="100" />
+          </xs:sequence>
         </xs:complexType>
-    </xs:element>
-
-    <xs:complexType name="imageType">
-        <xs:attribute name="source" type="xs:ENTITY" use="required" />
-    </xs:complexType>
-
-    <xs:element name="rooms">
+      </xs:element>
+      <xs:element name="amenities" type="amenitiesType" minOccurs="1"/>
+      <xs:element name="rooms">
         <xs:complexType>
-            <xs:sequence>
-                <xs:element name="room" type="roomType" minOccurs="1" maxOccurs="10000" />
-            </xs:sequence>
+          <xs:sequence>
+            <xs:element name="room" type="roomType" minOccurs="1" maxOccurs="10000" />
+          </xs:sequence>
         </xs:complexType>
-    </xs:element>
+      </xs:element>
+    </xs:sequence>
+    <xs:attribute name="id" type="xs:ID" use="required" />
+    <xs:attribute name="region" type="xs:IDREF" use="required" />
+    <xs:attribute name="chain" type="xs:IDREF" />
+    <xs:attribute name="property_type" type="propertyType" default="hotel" />
+  </xs:complexType>
 
-    <xs:complexType name="roomType">
-        <xs:sequence>
-            <xs:element name="type" type="roomTypeEnum" />
-            <xs:element name="beds" type="xs:positiveInteger" />
-            <xs:element name="capacity" type="integer_1-50" />
-            <xs:element name="size" type="xs:float" minOccurs="0" />
-            <xs:element name="price_per_night" type="xs:decimal" minOccurs="0" />
-            <xs:element name="facilities" type="facilitiesType" minOccurs="0" />
-        </xs:sequence>
-        <xs:attribute name="id" type="xs:ID" use="required" />
-        <xs:attribute name="available_count" type="xs:nonNegativeInteger" default="1" />
+  <xs:complexType name="amenitiesType">
+    <xs:attribute name="breakfast" type="xs:boolean" default="false" />
+    <xs:attribute name="dinner" type="xs:boolean" default="false" />
+    <xs:attribute name="wi-fi" type="xs:boolean" default="false" />
+    <xs:attribute name="parking" type="xs:boolean" default="false" />
+    <xs:attribute name="restaurant" type="xs:boolean" default="false" />
+    <xs:attribute name="bar" type="xs:boolean" default="false" />
+    <xs:attribute name="pool" type="xs:boolean" default="false" />
+    <xs:attribute name="indoor-pool" type="xs:boolean" default="false" />
+    <xs:attribute name="outdoor-pool" type="xs:boolean" default="false" />
+    <xs:attribute name="fitness" type="xs:boolean" default="false" />
+    <xs:attribute name="spa" type="xs:boolean" default="false" />
+    <xs:attribute name="massage" type="xs:boolean" default="false" />
+    <xs:attribute name="sauna" type="xs:boolean" default="false" />
+    <xs:attribute name="conference-rooms" type="xs:boolean" default="false" />
+    <xs:attribute name="pets" type="xs:boolean" default="false" />
+    <xs:attribute name="room-service" type="xs:boolean" default="false" />
+    <xs:attribute name="airport-shuttle" type="xs:boolean" default="false" />
+    <xs:attribute name="kids-club" type="xs:boolean" default="false" />
+    <xs:attribute name="playground" type="xs:boolean" default="false" />
+    <xs:attribute name="beach-access" type="xs:boolean" default="false" />
+  </xs:complexType>
+
+  <xs:simpleType name="hotelCategoryType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="business" />
+      <xs:enumeration value="boutique" />
+      <xs:enumeration value="beach" />
+      <xs:enumeration value="budget" />
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="imageType">
+    <xs:attribute name="source" type="xs:string" use="required" />
+  </xs:complexType>
+
+  <xs:complexType name="roomType">
+    <xs:sequence>
+      <xs:element name="type" type="roomTypeEnum" />
+      <xs:element name="beds" type="xs:positiveInteger" />
+      <xs:element name="capacity" type="integer_1-50" />
+      <xs:element name="size" type="xs:float" minOccurs="0" />
+      <xs:element name="price_per_night" type="xs:decimal" minOccurs="0" />
+      <xs:element name="facilities" type="facilitiesType" minOccurs="0" />
+    </xs:sequence>
+    <xs:attribute name="id" type="xs:ID" use="required" />
+    <xs:attribute name="available_count" type="xs:nonNegativeInteger" default="1" />
+  </xs:complexType>
+
+  <xs:complexType name="facilitiesType">
+    <xs:attribute name="non-smoking" type="xs:boolean" default="true" />
+    <xs:attribute name="kitchen" type="xs:boolean" default="false" />
+    <xs:attribute name="air-conditioning" type="xs:boolean" default="false" />
+    <xs:attribute name="balcony" type="xs:boolean" default="false" />
+    <xs:attribute name="tv" type="xs:boolean" default="false" />
+    <xs:attribute name="bath" type="xs:boolean" default="false" />
+    <xs:attribute name="desk" type="xs:boolean" default="false" />
+    <xs:attribute name="hairdryer" type="xs:boolean" default="false" />
+    <xs:attribute name="wardrobe" type="xs:boolean" default="false" />
+    <xs:attribute name="sitting-area" type="xs:boolean" default="false" />
+  </xs:complexType>
+
+  <xs:element name="regions">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="region" type="regionType" minOccurs="1" maxOccurs="unbounded">
+          <xs:key name="regionKey">
+            <xs:selector xpath="." />
+            <xs:field xpath="@id" />
+          </xs:key>
+        </xs:element>
+      </xs:sequence>
     </xs:complexType>
+  </xs:element>
 
-    <xs:complexType name="facilitiesType">
-        <xs:attribute name="non-smoking" type="xs:boolean" default="true" />
-        <xs:attribute name="kitchen" type="xs:boolean" default="false" />
-        <xs:attribute name="air-conditioning" type="xs:boolean" default="false" />
-        <xs:attribute name="balcony" type="xs:boolean" default="false" />
-        <xs:attribute name="bathroom" type="xs:boolean" default="false" />
-        <xs:attribute name="tv" type="xs:boolean" default="false" />
-        <xs:attribute name="bath" type="xs:boolean" default="false" />
-        <xs:attribute name="shower" type="xs:boolean" default="false" />
-        <xs:attribute name="shared-bathroom" type="xs:boolean" default="false" />
-        <xs:attribute name="coffee-maker" type="xs:boolean" default="false" />
-        <xs:attribute name="hairdryer" type="xs:boolean" default="false" />
-        <xs:attribute name="iron" type="xs:boolean" default="false" />
-        <xs:attribute name="desk" type="xs:boolean" default="false" />
-        <xs:attribute name="sitting-area" type="xs:boolean" default="false" />
-        <xs:attribute name="wardrobe" type="xs:boolean" default="false" />
-        <xs:attribute name="minibar" type="xs:boolean" default="false" />
+  <xs:complexType name="regionType">
+    <xs:sequence>
+      <xs:element name="country" type="nonEmptyString" />
+      <xs:element name="municipality" type="nonEmptyString" />
+      <xs:element name="city" type="nonEmptyString" />
+    </xs:sequence>
+    <xs:attribute name="id" type="xs:ID" use="required" />
+  </xs:complexType>
+
+  <xs:element name="chains">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="chain" type="chainType" minOccurs="1" maxOccurs="unbounded">
+          <xs:key name="chainKey">
+            <xs:selector xpath="." />
+            <xs:field xpath="@id" />
+          </xs:key>
+        </xs:element>
+      </xs:sequence>
     </xs:complexType>
+  </xs:element>
 
-    <xs:element name="regions">
-        <xs:complexType>
-            <xs:sequence>
-                <xs:element name="region" type="regionType" minOccurs="1" maxOccurs="unbounded">
-                    <xs:key name="regionKey">
-                        <xs:selector xpath="." />
-                        <xs:field xpath="@id" />
-                    </xs:key>
-                </xs:element>
-            </xs:sequence>
-        </xs:complexType>
-    </xs:element>
+  <xs:complexType name="chainType">
+    <xs:sequence>
+      <xs:element name="name" type="xs:string" />
+    </xs:sequence>
+    <xs:attribute name="id" type="xs:ID" use="required" />
+  </xs:complexType>
 
-    <xs:complexType name="regionType">
-        <xs:sequence>
-            <xs:element name="country" type="nonEmptyString" />
-            <xs:element name="municipality" type="nonEmptyString" />
-            <xs:element name="city" type="nonEmptyString" />
-        </xs:sequence>
-        <xs:attribute name="id" type="xs:ID" use="required" />
-    </xs:complexType>
+  <xs:simpleType name="nonEmptyString">
+    <xs:restriction base="xs:string">
+      <xs:minLength value="1" />
+    </xs:restriction>
+  </xs:simpleType>
 
-    <xs:element name="chains">
-        <xs:complexType>
-            <xs:sequence>
-                <xs:element name="chain" type="chainType" minOccurs="1" maxOccurs="unbounded">
-                    <xs:key name="chainKey">
-                        <xs:selector xpath="." />
-                        <xs:field xpath="@id" />
-                    </xs:key>
-                </xs:element>
-            </xs:sequence>
-        </xs:complexType>
-    </xs:element>
+  <xs:simpleType name="shortString">
+    <xs:restriction base="xs:string">
+      <xs:minLength value="1" />
+      <xs:maxLength value="1024" />
+    </xs:restriction>
+  </xs:simpleType>
 
-    <xs:complexType name="chainType">
-        <xs:sequence>
-            <xs:element name="name" type="xs:string" />
-        </xs:sequence>
-        <xs:attribute name="id" type="xs:ID" use="required" />
-    </xs:complexType>
+  <xs:simpleType name="integer_0-5">
+    <xs:restriction base="xs:integer">
+      <xs:minInclusive value="0" />
+      <xs:maxInclusive value="5" />
+    </xs:restriction>
+  </xs:simpleType>
 
-    <xs:simpleType name="nonEmptyString">
-        <xs:restriction base="xs:string">
-            <xs:minLength value="1" />
-        </xs:restriction>
-    </xs:simpleType>
+  <xs:simpleType name="float_0-10">
+    <xs:restriction base="xs:float">
+      <xs:minInclusive value="0" />
+      <xs:maxInclusive value="10" />
+    </xs:restriction>
+  </xs:simpleType>
 
-    <xs:simpleType name="shortString">
-        <xs:restriction base="xs:string">
-            <xs:minLength value="1" />
-            <xs:maxLength value="1024" />
-        </xs:restriction>
-    </xs:simpleType>
+  <xs:simpleType name="integer_1-50">
+    <xs:restriction base="xs:integer">
+      <xs:minInclusive value="1" />
+      <xs:maxInclusive value="50" />
+    </xs:restriction>
+  </xs:simpleType>
 
-    <xs:simpleType name="integer_0-5">
-        <xs:restriction base="xs:integer">
-            <xs:minInclusive value="0" />
-            <xs:maxInclusive value="5" />
-        </xs:restriction>
-    </xs:simpleType>
+  <xs:complexType name="priceType">
+    <xs:simpleContent>
+      <xs:extension base="xs:decimal">
+        <xs:attribute name="currency" type="xs:string" default="EUR" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
 
-    <xs:simpleType name="float_0-10">
-        <xs:restriction base="xs:float">
-            <xs:minInclusive value="0" />
-            <xs:maxInclusive value="10" />
-        </xs:restriction>
-    </xs:simpleType>
+  <xs:simpleType name="emailType">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="[^@]+@[^@]+\.[^@]+" />
+    </xs:restriction>
+  </xs:simpleType>
 
-    <xs:simpleType name="integer_1-50">
-        <xs:restriction base="xs:integer">
-            <xs:minInclusive value="1" />
-            <xs:maxInclusive value="50" />
-        </xs:restriction>
-    </xs:simpleType>
+  <xs:simpleType name="propertyType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="hotel" />
+      <xs:enumeration value="apartment" />
+      <xs:enumeration value="resort" />
+    </xs:restriction>
+  </xs:simpleType>
 
-    <xs:complexType name="priceType">
-        <xs:simpleContent>
-            <xs:extension base="xs:decimal">
-                <xs:attribute name="currency" type="xs:string" default="EUR" />
-                <xs:attribute name="per" type="periodType" default="night" />
-            </xs:extension>
-        </xs:simpleContent>
-    </xs:complexType>
+  <xs:simpleType name="timeFormat">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="([0-1][0-9]|2[0-3]):[0-5][0-9]" />
+    </xs:restriction>
+  </xs:simpleType>
 
-    <xs:simpleType name="emailType">
-        <xs:restriction base="xs:string">
-            <xs:pattern value="[^@]+@[^@]+\.[^@]+" />
-        </xs:restriction>
-    </xs:simpleType>
-
-    <xs:simpleType name="propertyType">
-        <xs:restriction base="xs:string">
-            <xs:enumeration value="hotel" />
-            <xs:enumeration value="apartment" />
-            <xs:enumeration value="hostel" />
-            <xs:enumeration value="guesthouse" />
-            <xs:enumeration value="vacation-rental" />
-            <xs:enumeration value="bed-and-breakfast" />
-            <xs:enumeration value="motel" />
-            <xs:enumeration value="resort" />
-        </xs:restriction>
-    </xs:simpleType>
-
-    <xs:simpleType name="periodType">
-        <xs:restriction base="xs:string">
-            <xs:enumeration value="night" />
-            <xs:enumeration value="week" />
-            <xs:enumeration value="month" />
-            <xs:enumeration value="stay" />
-        </xs:restriction>
-    </xs:simpleType>
-
-    <xs:simpleType name="timeFormat">
-        <xs:restriction base="xs:string">
-            <xs:pattern value="([0-1][0-9]|2[0-3]):[0-5][0-9]" />
-        </xs:restriction>
-    </xs:simpleType>
-
-    <xs:simpleType name="roomTypeEnum">
-        <xs:restriction base="xs:string">
-            <xs:enumeration value="Single Room" />
-            <xs:enumeration value="Double Room" />
-            <xs:enumeration value="Twin Room" />
-            <xs:enumeration value="Triple Room" />
-            <xs:enumeration value="Quad Room" />
-            <xs:enumeration value="Family Room" />
-            <xs:enumeration value="Suite" />
-            <xs:enumeration value="Junior Suite" />
-            <xs:enumeration value="Executive Suite" />
-            <xs:enumeration value="Presidential Suite" />
-            <xs:enumeration value="Suite" />
-            <xs:enumeration value="Deluxe Room" />
-            <xs:enumeration value="Superior Room" />
-            <xs:enumeration value="Standard Room" />
-            <xs:enumeration value="Economy Room" />
-            <xs:enumeration value="Penthouse" />
-            <xs:enumeration value="Apartment" />
-            <xs:enumeration value="Villa" />
-            <xs:enumeration value="Dormitory" />
-            <xs:enumeration value="Standard" />
-            <xs:enumeration value="Premium" />
-        </xs:restriction>
-    </xs:simpleType>
-
+  <xs:simpleType name="roomTypeEnum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Deluxe Room" />
+      <xs:enumeration value="Suite" />
+      <xs:enumeration value="Standard Room" />
+      <xs:enumeration value="Triple Room" />
+      <xs:enumeration value="Villa" />
+      <xs:enumeration value="Apartment" />
+    </xs:restriction>
+  </xs:simpleType>
 </xs:schema>

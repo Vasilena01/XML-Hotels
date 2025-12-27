@@ -1,39 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <?xml-stylesheet href="hotels.xsl" type="text/xsl"?>
-<!DOCTYPE catalogue SYSTEM "hotels.dtd" [
-	<!ATTLIST catalogue
-		xmlns:xsi CDATA #FIXED "http://www.w3.org/2001/XMLSchema-instance"
-		xsi:noNamespaceSchemaLocation CDATA #FIXED "hotels.xsd">
-
-	<!NOTATION jpeg SYSTEM "image/jpeg">
-	<!ENTITY hotel1_image0 PUBLIC "hotel1_image0_identifier" "https://i.ibb.co/5X7LgtGW/image.png" NDATA jpeg>
-	<!ENTITY hotel1_image1 PUBLIC "hotel1_image1_identifier" "https://i.ibb.co/1YmxKL3M/image.png" NDATA jpeg>
-	<!ENTITY hotel1_image2 PUBLIC "hotel1_image2_identifier" "https://i.ibb.co/5WWKdvFT/image.png" NDATA jpeg>
-
-	<!ENTITY hotel2_image0 PUBLIC "hotel2_image0_identifier" "https://i.ibb.co/hRM15LDc/image.png" NDATA jpeg>
-	<!ENTITY hotel2_image1 PUBLIC "hotel2_image1_identifier" "https://i.ibb.co/mCDTFQd7/image.png" NDATA jpeg>
-	<!ENTITY hotel2_image2 PUBLIC "hotel2_image2_identifier" "https://i.ibb.co/qLSVV7z3/image.png" NDATA jpeg>
-
-	<!ENTITY hotel3_image0 PUBLIC "hotel3_image0_identifier" "https://i.ibb.co/xqSc0jr5/image.png" NDATA jpeg>
-	<!ENTITY hotel3_image1 PUBLIC "hotel3_image1_identifier" "https://i.ibb.co/b5KP7wBg/image.png" NDATA jpeg>
-	<!ENTITY hotel3_image2 PUBLIC "hotel3_image2_identifier" "https://i.ibb.co/9HKPD2yy/image.png" NDATA jpeg>
-	
-	<!ENTITY hotel4_image0 PUBLIC "hotel4_image0_identifier" "https://i.ibb.co/9kyvZCgk/image.png" NDATA jpeg>
-	<!ENTITY hotel4_image1 PUBLIC "hotel4_image1_identifier" "https://i.ibb.co/Dgt2Zrq2/image.png" NDATA jpeg>
-	
-	<!ENTITY hotel5_image0 PUBLIC "hotel5_image0_identifier" "https://i.ibb.co/0jttC0t8/image.png" NDATA jpeg>
-	<!ENTITY hotel5_image1 PUBLIC "hotel5_image1_identifier" "https://i.ibb.co/JSsF18k/image.png" NDATA jpeg>
-	<!ENTITY hotel5_image2 PUBLIC "hotel5_image2_identifier" "https://i.ibb.co/Zz15Dx19/image.png" NDATA jpeg>
-	
-	<!ENTITY hotel6_image0 PUBLIC "hotel6_image0_identifier" "https://i.ibb.co/LdTPLN7T/image.png" NDATA jpeg>
-	<!ENTITY hotel6_image1 PUBLIC "hotel6_image1_identifier" "https://i.ibb.co/tpSs4NNq/image.png" NDATA jpeg>
-	
-	<!ENTITY hotel7_image0 PUBLIC "hotel7_image0_identifier" "https://i.ibb.co/jP7d013d/image.png" NDATA jpeg>
-	<!ENTITY hotel7_image1 PUBLIC "hotel7_image1_identifier" "https://i.ibb.co/d0zMRqFH/image.png" NDATA jpeg>
-	
-	<!ENTITY hotel8_image0 PUBLIC "hotel8_image0_identifier" "https://i.ibb.co/Tqqrx35K/image.png" NDATA jpeg>
-	<!ENTITY hotel8_image1 PUBLIC "hotel8_image1_identifier" "https://i.ibb.co/S4R2FrTM/image.png" NDATA jpeg>
-]>
+<!DOCTYPE catalogue SYSTEM "hotels.dtd">
 
 <catalogue xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="hotels.xsd">
 	<hotels>

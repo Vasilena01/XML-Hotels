@@ -3,234 +3,27 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Luxury Hotel Catalogue</title>
+    <title>Hotels Catalogue</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <style>
-        .hotel-card {
-            border-radius: 12px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-            transition: transform 0.2s ease;
-            margin-bottom: 2rem;
-        }
-        .hotel-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
-        }
-        .hotel-image {
-            height: 250px;
-            object-fit: cover;
-            border-radius: 12px 12px 0 0;
-        }
-        .star-rating {
-            color: #FFD700;
-        }
-        .rating-badge {
-            background: #003580;
-            color: white;
-            border-radius: 8px;
-            padding: 0.3rem 0.6rem;
-        }
-        .price-highlight {
-            color: #FF6B35;
-            font-weight: bold;
-        }
-        .amenity-badge {
-            background: #E8F5E8;
-            color: #2E7D32;
-            border-radius: 20px;
-            padding: 0.2rem 0.8rem;
-            margin: 0.2rem;
-            font-size: 0.85rem;
-        }
-        .amenity-badge.false {
-            background: #FFEBEE;
-            color: #C62828;
-        }
-        .room-card {
-            border: 1px solid #e0e0e0;
-            border-radius: 8px;
-            margin-bottom: 1rem;
-            transition: all 0.2s ease;
-        }
-        .room-card:hover {
-            border-color: #003580;
-            box-shadow: 0 2px 8px rgba(0,53,128,0.1);
-        }
-        .btn-booking {
-            background: #006CE4;
-            color: white;
-            border-radius: 4px;
-            padding: 0.5rem 1.5rem;
-            border: none;
-            font-weight: 600;
-        }
-        .btn-booking:hover {
-            background: #003580;
-            color: white;
-        }
-        .loading {
-            text-align: center;
-            padding: 2rem;
-        }
-    </style>
+    <link rel="stylesheet" href="hotels-styles.css">
 </head>
 <body class="bg-light">
     <nav class="navbar navbar-dark bg-primary mb-4">
         <div class="container">
             <span class="navbar-brand mb-0 h1">
                 <i class="fas fa-hotel me-2"></i>
-                Luxury Hotel Catalogue
+                Hotels Catalogue
             </span>
         </div>
     </nav>
     
     <div id="content" class="container">
-        <div class="loading">
-            <div class="spinner-border text-primary" role="status">
-                <span class="visually-hidden">Loading...</span>
-            </div>
-            <p class="mt-2">Loading hotel catalogue...</p>
-        </div>
+    
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     
-    <script>
-        let imageUrlsMap = [];
-        
-        const updateImageSource = () => {
-            imageUrlsMap.forEach(e => { 
-                document.querySelectorAll(`[src="${e[0]}"]`).forEach(el => el.setAttribute("src",e[1]));
-            });
-        };
-
-        let state = {
-            showAll: true,
-            showId: "",
-            sortOn: "",
-            sortOrder: "ascending",
-            sortType: "text",
-            filterOn: "",
-            filterValue: ""
-        };
-
-        const xmlDocPath = "hotels.xml";
-        const xslDocPath = "hotels.xsl";
-
-        let xsltProcessor;
-        let xmlDoc;
-
-        const initialize = async () => {
-            try {
-                const parser = new DOMParser();
-                xsltProcessor = new XSLTProcessor();
-
-                const xslResponse = await fetch(xslDocPath);
-                const xslText = await xslResponse.text();
-                const xslStylesheet = parser.parseFromString(xslText, "application/xml");
-                xsltProcessor.importStylesheet(xslStylesheet);
-
-                const xmlResponse = await fetch(xmlDocPath);
-                const xmlText = await xmlResponse.text();
-                xmlDoc = parser.parseFromString(xmlText, "application/xml");
-                
-                // Extract image entities for replacement
-                const entities = xmlText.match(/<!ENTITY\s+(\w+)\s+[^>]+\"([^"]+)\"/g);
-                if (entities) {
-                    entities.forEach(entity => {
-                        const match = entity.match(/<!ENTITY\s+(\w+)\s+[^>]+\"([^"]+)\"/);
-                        if (match) {
-                            imageUrlsMap.push([match[1], match[2]]);
-                        }
-                    });
-                }
-                
-                updateContent();
-            } catch(e) {
-                console.error('Error loading XML/XSLT:', e);
-                document.getElementById("content").innerHTML = `
-                    <div class="alert alert-danger" role="alert">
-                        <h4 class="alert-heading">Error Loading Content</h4>
-                        <p>There was an error loading the hotel catalogue. Please make sure you're viewing this page from a web server.</p>
-                        <hr>
-                        <p class="mb-0">Error details: ${e.message}</p>
-                    </div>
-                `;
-            }
-        };
-        
-        const updateContent = () => {
-            if (!xsltProcessor || !xmlDoc) return;
-            
-            try {
-                xsltProcessor.clearParameters();
-                xsltProcessor.setParameter(null, 'loadDocument', 'false');
-                xsltProcessor.setParameter(null, 'showAll', state.showAll.toString());
-                xsltProcessor.setParameter(null, 'showId', state.showId);
-                xsltProcessor.setParameter(null, 'sortOn', state.sortOn);
-                xsltProcessor.setParameter(null, 'sortOrder', state.sortOrder);
-                xsltProcessor.setParameter(null, 'sortType', state.sortType);
-                xsltProcessor.setParameter(null, 'filterOn', state.filterOn);
-                xsltProcessor.setParameter(null, 'filterValue', state.filterValue);
-
-                // Transform to document and get the result
-                const resultDoc = xsltProcessor.transformToDocument(xmlDoc);
-                const resultHTML = new XMLSerializer().serializeToString(resultDoc);
-                
-                // Parse and insert the HTML content
-                const tempDiv = document.createElement('div');
-                tempDiv.innerHTML = resultHTML.replace(/^<\?xml[^>]*>/, '');
-                
-                const contentElement = document.getElementById("content");
-                contentElement.textContent = "";
-                
-                // Append all child nodes
-                while (tempDiv.firstChild) {
-                    contentElement.appendChild(tempDiv.firstChild);
-                }
-
-                updateImageSource();
-            } catch(e) {
-                console.error('Error transforming content:', e);
-                document.getElementById("content").innerHTML = `
-                    <div class="alert alert-danger" role="alert">
-                        <h4 class="alert-heading">Transformation Error</h4>
-                        <p>There was an error transforming the XML data. Please check the console for details.</p>
-                        <hr>
-                        <p class="mb-0">Error: ${e.message}</p>
-                    </div>
-                `;
-            }
-        };
-
-        const orderBy = (sortOn, sortOrder, sortType) => {
-            state.sortOn = sortOn;
-            state.sortOrder = sortOrder;
-            state.sortType = sortType;
-            updateContent();
-        };
-
-        const filterBy = (filterOn, filterValue) => {
-            state.filterOn = filterOn;
-            state.filterValue = filterValue;
-            updateContent();
-        };
-
-        const showHotelInfo = (showId) => {
-            state.showAll = false;
-            state.showId = showId;
-            updateContent();
-        };
-
-        const showAllHotels = () => {
-            state.showAll = true;
-            state.showId = "";
-            updateContent();
-        };
-
-        // Initialize when DOM is loaded
-        document.addEventListener('DOMContentLoaded', initialize);
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
