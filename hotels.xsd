@@ -85,10 +85,13 @@
     <xs:attribute name="spa" type="xs:boolean" default="false" />
     <xs:attribute name="massage" type="xs:boolean" default="false" />
     <xs:attribute name="sauna" type="xs:boolean" default="false" />
+    <xs:attribute name="hot-tub" type="xs:boolean" default="false" />
     <xs:attribute name="conference-rooms" type="xs:boolean" default="false" />
     <xs:attribute name="pets" type="xs:boolean" default="false" />
     <xs:attribute name="room-service" type="xs:boolean" default="false" />
+    <xs:attribute name="shuttle-service" type="xs:boolean" default="false" />
     <xs:attribute name="airport-shuttle" type="xs:boolean" default="false" />
+    <xs:attribute name="car-rental" type="xs:boolean" default="false" />
     <xs:attribute name="kids-club" type="xs:boolean" default="false" />
     <xs:attribute name="playground" type="xs:boolean" default="false" />
     <xs:attribute name="beach-access" type="xs:boolean" default="false" />
@@ -127,8 +130,12 @@
     <xs:attribute name="balcony" type="xs:boolean" default="false" />
     <xs:attribute name="tv" type="xs:boolean" default="false" />
     <xs:attribute name="bath" type="xs:boolean" default="false" />
+    <xs:attribute name="shower" type="xs:boolean" default="false" />
+    <xs:attribute name="shared-bathroom" type="xs:boolean" default="false" />
+    <xs:attribute name="coffee-maker" type="xs:boolean" default="false" />
     <xs:attribute name="desk" type="xs:boolean" default="false" />
     <xs:attribute name="hairdryer" type="xs:boolean" default="false" />
+    <xs:attribute name="iron" type="xs:boolean" default="false" />
     <xs:attribute name="wardrobe" type="xs:boolean" default="false" />
     <xs:attribute name="sitting-area" type="xs:boolean" default="false" />
   </xs:complexType>
@@ -213,6 +220,16 @@
     <xs:simpleContent>
       <xs:extension base="xs:decimal">
         <xs:attribute name="currency" type="xs:string" default="EUR" />
+        <xs:attribute name="per" default="night">
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <xs:enumeration value="night" />
+              <xs:enumeration value="week" />
+              <xs:enumeration value="month" />
+              <xs:enumeration value="stay" />
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:attribute>
       </xs:extension>
     </xs:simpleContent>
   </xs:complexType>
