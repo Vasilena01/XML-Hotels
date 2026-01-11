@@ -3,7 +3,6 @@
     xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
     <xsl:output method="html" indent="yes" omit-xml-declaration="yes" />
 
-    <xsl:param name="loadDocument">true</xsl:param>
     <xsl:param name="showAll">true</xsl:param>
     <xsl:param name="showId"></xsl:param>
     <xsl:param name="sortOn"></xsl:param>
@@ -13,42 +12,7 @@
     <xsl:param name="filterValue"></xsl:param>
 
     <xsl:template match="/">
-        <xsl:choose>
-            <xsl:when test="$loadDocument = 'true'">
-                <xsl:call-template name="loadDocument" />
-            </xsl:when>
-            <xsl:otherwise>
-                <xsl:call-template name="loadContent" />
-            </xsl:otherwise>
-        </xsl:choose>
-    </xsl:template>
-
-    <xsl:template name="loadDocument">
-        <html lang="en">
-            <head>
-                <meta charset="utf-8" />
-                <meta name="viewport" content="width=device-width, initial-scale=1" />
-                <title>Luxury Hotel Catalogue</title>
-                <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous"/>
-                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
-                <link rel="stylesheet" href="hotels-styles.css" />
-            </head>
-            <body>
-                <nav class="navbar navbar-dark bg-primary mb-4">
-                    <div class="container">
-                        <span class="navbar-brand mb-0 h1">
-                            <i class="fas fa-hotel me-2"></i>
-                            Luxury Hotel Catalogue
-                        </span>
-                    </div>
-                </nav>
-                <div id="content" class="container">
-                </div>
-
-                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"/>
-                <script src="script.js"></script>
-            </body>
-        </html>
+        <xsl:call-template name="loadContent" />
     </xsl:template>
 
     <xsl:template name="loadContent">

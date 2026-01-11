@@ -3,7 +3,6 @@
 
     window.imageUrlsMap = [];
     window.state = {
-        loadDocument: "false",
         showAll: "true",
         showId: "",
         sortOn: "",
