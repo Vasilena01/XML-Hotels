@@ -4,7 +4,7 @@
 
 <catalogue xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="hotels.xsd">
 	<hotels>
-		<hotel id="hotel1" region="region5" chain="chain1" property_type="hotel">
+		<hotel id="hotel1" region="region4" chain="chain1" property_type="hotel">
 			<name>Grand Hotel Sofia</name>
 			<category>business</category>
 			<address>1 Narodno Sabranie Square, Sofia Center, 1000 Sofia, Bulgaria</address>
@@ -12,7 +12,7 @@
 			<stars>5</stars>
 			<rating>9.3</rating>
 			<review_count>2847</review_count>
-			<price currency="BGN">520</price>
+			<price currency="BGN">180</price>
 			<checkin_time>14:00</checkin_time>
 			<checkout_time>12:00</checkout_time>
 			<phone>+359 2 811 0800</phone>
@@ -52,7 +52,7 @@
 			<stars>4</stars>
 			<rating>9.2</rating>
 			<review_count>1456</review_count>
-			<price currency="USD">125</price>
+			<price currency="USD">85</price>
 			<checkin_time>15:00</checkin_time>
 			<checkout_time>11:00</checkout_time>
 			<phone>+359 32 935 000</phone>
@@ -84,7 +84,7 @@
 			</rooms>
 		</hotel>
 
-		<hotel id="hotel3" region="region6" property_type="resort">
+		<hotel id="hotel3" region="region5" property_type="resort">
 			<name>Seaside Palace Resort</name>
 			<category>beach</category>
 			<address>Golden Sands Beach, 9007 Varna, Bulgaria</address>
@@ -92,7 +92,7 @@
 			<stars>5</stars>
 			<rating>9.1</rating>
 			<review_count>3298</review_count>
-			<price currency="EUR">380</price>
+			<price currency="EUR">280</price>
 			<checkin_time>16:00</checkin_time>
 			<checkout_time>11:00</checkout_time>
 			<phone>+359 52 817 200</phone>
@@ -124,7 +124,7 @@
 			</rooms>
 		</hotel>
 
-		<hotel id="hotel4" region="region2" property_type="hotel">
+		<hotel id="hotel4" region="region1" property_type="hotel">
 			<name>Hotel Rila</name>
 			<category>budget</category>
 			<address>Svoboda Square N 1, 2600 Dupnitsa, Bulgaria</address>
@@ -132,7 +132,7 @@
 			<stars>3</stars>
 			<rating>8.5</rating>
 			<review_count>892</review_count>
-			<price currency="AUD">60</price>
+			<price currency="EUR">35</price>
 			<checkin_time>14:00</checkin_time>
 			<checkout_time>11:00</checkout_time>
 			<phone>+359 701 23456</phone>
@@ -163,7 +163,7 @@
 			</rooms>
 		</hotel>
 
-		<hotel id="hotel5" region="region7" chain="chain3" property_type="hotel">
+		<hotel id="hotel5" region="region6" chain="chain3" property_type="hotel">
 			<name>Coastal View Hotel Burgas</name>
 			<category>business</category>
 			<address>1 Primorski Boulevard, 8000 Burgas, Bulgaria</address>
@@ -171,7 +171,7 @@
 			<stars>4</stars>
 			<rating>8.7</rating>
 			<review_count>1876</review_count>
-			<price currency="EUR">95</price>
+			<price currency="EUR">75</price>
 			<checkin_time>15:00</checkin_time>
 			<checkout_time>11:00</checkout_time>
 			<phone>+359 56 844 100</phone>
@@ -203,7 +203,7 @@
 			</rooms>
 		</hotel>
 
-		<hotel id="hotel6" region="region8" chain="chain1" property_type="hotel">
+		<hotel id="hotel6" region="region7" chain="chain1" property_type="hotel">
 			<name>Tsarevets Palace Hotel</name>
 			<category>business</category>
 			<address>2 Tsar Asen Square, 5000 Veliko Tarnovo, Bulgaria</address>
@@ -211,7 +211,7 @@
 			<stars>5</stars>
 			<rating>9.4</rating>
 			<review_count>2156</review_count>
-			<price currency="EUR">320</price>
+			<price currency="EUR">200</price>
 			<checkin_time>14:00</checkin_time>
 			<checkout_time>12:00</checkout_time>
 			<phone>+359 62 622 000</phone>
@@ -242,7 +242,7 @@
 			</rooms>
 		</hotel>
 
-		<hotel id="hotel7" region="region5" chain="chain3" property_type="apartment">
+		<hotel id="hotel7" region="region4" chain="chain3" property_type="apartment">
 			<name>City Center Apartments Sofia</name>
 			<category>budget</category>
 			<address>15 Vitosha Boulevard, 1000 Sofia, Bulgaria</address>
@@ -250,7 +250,7 @@
 			<stars>3</stars>
 			<rating>8.6</rating>
 			<review_count>1123</review_count>
-			<price currency="USD">65</price>
+			<price currency="USD">55</price>
 			<checkin_time>15:00</checkin_time>
 			<checkout_time>11:00</checkout_time>
 			<phone>+359 2 987 6543</phone>
@@ -281,7 +281,7 @@
 			</rooms>
 		</hotel>
 
-		<hotel id="hotel8" region="region3" chain="chain2" property_type="hotel">
+		<hotel id="hotel8" region="region2" chain="chain2" property_type="hotel">
 			<name>Old Town Boutique Hotel</name>
 			<category>boutique</category>
 			<address>5 Saborna Street, 4000 Plovdiv, Bulgaria</address>
@@ -289,7 +289,7 @@
 			<stars>4</stars>
 			<rating>9.0</rating>
 			<review_count>987</review_count>
-			<price currency="EUR">110</price>
+			<price currency="EUR">90</price>
 			<checkin_time>14:00</checkin_time>
 			<checkout_time>11:00</checkout_time>
 			<phone>+359 32 633 555</phone>
@@ -322,32 +322,32 @@
 	</hotels>
 
 	<regions>
-		<region id="region2">
+		<region id="region1">
 			<country>Bulgaria</country>
 			<municipality>Kyustendil Province</municipality>
 			<city>Dupnitsa</city>
 		</region>
-		<region id="region3">
+		<region id="region2">
 			<country>Bulgaria</country>
 			<municipality>Plovdiv Province</municipality>
 			<city>Plovdiv</city>
 		</region>
-		<region id="region5">
+		<region id="region4">
 			<country>Bulgaria</country>
 			<municipality>Sofia Province</municipality>
 			<city>Sofia</city>
 		</region>
-		<region id="region6">
+		<region id="region5">
 			<country>Bulgaria</country>
 			<municipality>Varna Province</municipality>
 			<city>Varna</city>
 		</region>
-		<region id="region7">
+		<region id="region6">
 			<country>Bulgaria</country>
 			<municipality>Burgas Province</municipality>
 			<city>Burgas</city>
 		</region>
-		<region id="region8">
+		<region id="region7">
 			<country>Bulgaria</country>
 			<municipality>Veliko Tarnovo Province</municipality>
 			<city>Veliko Tarnovo</city>

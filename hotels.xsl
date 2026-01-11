@@ -74,7 +74,6 @@
                                                 <li><button onclick="filterBy('property','hotel')" class="dropdown-item"><i class="fas fa-hotel me-2"></i>Hotels</button></li>
                                                 <li><button onclick="filterBy('property','resort')" class="dropdown-item"><i class="fas fa-umbrella-beach me-2"></i>Resorts</button></li>
                                                 <li><button onclick="filterBy('property','apartment')" class="dropdown-item"><i class="fas fa-home me-2"></i>Apartments</button></li>
-                                                <li><button onclick="filterBy('property','villa')" class="dropdown-item"><i class="fas fa-crown me-2"></i>Villas</button></li>
                                             </ul>
                                         </div>
                                     </div>
